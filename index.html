@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle Financeiro</title>
-    <link rel="stylesheet" href="/projeto-financeiro/assets/css/style.css">
-</head>
-<body>
-    <header>
-        <img src="/projeto-financeiro/assets/img/ellipse.png" alt="Ellipse">
-        <title>Controle financeiro</title>
-        
-    </header>
-    <div>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/style.css">
+
+    </head>
+    <body>
         <div>
-            <label>Tipo de transação</label>
-            <select>
-                <option>Compra</option>
-                <option>Venda</option>
-            </select>
+            
         </div>
-        <div>
-            <label>Nome da mercadoria</label>
-            <input type="text" placeholder="Input">
+
+        <div class="form-square">
+            <h1>Nova transação</h1>
+            <div class="field-wrapper">
+                <div class="form-field field-small">
+                    <label>Tipo de transação</label>
+                    <select>
+                        <option>Compra</option>
+                        <option>Venda</option>
+                    </select>  
+                </div>
+                <div class="form-field field-big">
+                    <label>Nome da mercadoria</label>
+                    <input type="text" placeholder="Input"/>
+                </div>
+                <div class="form-field field-small">
+                    <label>Valor</label>
+                    <input type="number" placeholder="valor"/>
+                </div>
+                <button>Adicionar transação</button>
+            </div>
         </div>
-        <div>
-            <label>Valor</label>
-            <input number="text" placeholder="valor">
-            <button>Adicionar transação</button>
-        </div>
-    </div>
-</body>
+
+   
+    </body>
 </html>
