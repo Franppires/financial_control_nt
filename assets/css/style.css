@@ -1,8 +1,8 @@
+
 /*Geral*/
 body {
     margin: 0px;
     font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #333;
 }
 
@@ -62,13 +62,44 @@ body {
     margin-top: 28.56px;
     color: #979797;
 }
-.table {
-    border: 1px solid rgb(117, 117, 117);
+.table, th, td {
     border-collapse: collapse;
     margin-left: 20px;
     margin-right: 20px;
+
 }
 
+.first-line {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+    
+}
+.second-line {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    border-bottom: 1px solid #979797;
+}
+
+.third-line, .fourth-line, .fifth-line {
+    line-height: 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #979797;
+}
+.sixth-line {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.seventh-line {
+    text-align: right;
+    font-size: 10px;
+    padding: 0px;
+    line-height: 16px;
 }
 
 
