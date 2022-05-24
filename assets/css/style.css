@@ -4,6 +4,35 @@ body {
     margin: 0px;
     font-size: 14px;
     color: #333;
+    font-family: 'Lato', sans-serif;
+}
+
+/*Header*/
+.logo {
+    margin-top: 15px;
+    margin-left: 22px;
+    width: 30px;
+    height: 27.63px;
+    text-align: left;
+}
+.menu-hamburguer { 
+    height: 12px;
+    width: 18px;
+    margin-top: 24px;
+    text-align: right
+
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #979797;
+
+}
+
+h2 {
+    font-size: 20px;
 }
 
 /*Form Square*/
@@ -37,6 +66,7 @@ body {
 
 .form-square button {
     height: 32px;
+    border-radius: 4px;
     margin-top: 19.78px;
     margin-left: 20px;
     margin-right: 20px;
@@ -55,52 +85,65 @@ body {
     display: none;
 }
 
-/*Tabela*/
 .line {
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 28.56px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     color: #979797;
 }
-.table, th, td {
-    border-collapse: collapse;
+/*Tabela*/
+.table {
+    width: 100% calc(100%-20px);
     margin-left: 20px;
-    margin-right: 20px;
-
+    margin-right: 20px
 }
 
 .first-line {
-    text-align: center;
     font-size: 18px;
     font-weight: bold;
-    line-height: 22px;
-    
+    text-align: center;
+    line-height: 50px;
+
 }
-.second-line {
-    text-align: left;
-    font-size: 14px;
+.second-line, .seventh-line { 
     font-weight: bold;
-    line-height: 22px;
-    border-bottom: 1px solid #979797;
 }
 
-.third-line, .fourth-line, .fifth-line {
-    line-height: 16px;
-    font-size: 14px;
-    border-bottom: 1px solid #979797;
-}
-.sixth-line {
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 16px;
+.table, tr, td {
+    border-collapse: collapse;
 }
 
+.second-line, .third-line, .fourth-line, .fifth-line, .sixth-line  {
+    border-bottom: 1px solid #979797;  
+    line-height: 30px;
+}
 .seventh-line {
-    text-align: right;
-    font-size: 10px;
-    padding: 0px;
-    line-height: 16px;
+    line-height: 30px;
+
 }
+
+.firt-column {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.second-column {
+    width: 50%;
+    text-align: right;
+}
+
+.eighth-line {
+    font-size: 10px;
+    text-align: right;
+    padding: 0px;
+
+ }
+
+ .line-value {
+     text-align: right;
+ }
+
 
 
 /*Alteração para tamanho de 768px*/
