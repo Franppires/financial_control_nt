@@ -2,6 +2,7 @@
 /*Geral*/
 body {
     margin: 0px;
+    padding: 0px;
     font-size: 14px;
     color: #333;
     font-family: 'Lato', sans-serif;
@@ -9,30 +10,35 @@ body {
 
 /*Header*/
 .logo {
-    margin-top: 15px;
-    margin-left: 22px;
     width: 30px;
     height: 27.63px;
     text-align: left;
+    margin-top: 15px;
+    margin-left: 22px;
+    margin-bottom: 17.37px;
 }
-.menu-hamburguer { 
-    height: 12px;
-    width: 18px;
-    margin-top: 24px;
-    text-align: right
 
+.menu-hamburguer { 
+    width: 18px;
+    height: 18px;
+    margin: 20px;
+    color: #333333;
 }
 
 .header-wrapper {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: #979797;
-
+    width: 100%;
+    height: 100%;
+    background: #E0E0E0;
 }
 
-h2 {
+span {
+    width: 100%;
     font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 /*Form Square*/
@@ -41,6 +47,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right: 20px;
 }
 
 .form-square .field-wrapper {
@@ -67,18 +74,17 @@ h2 {
 .form-square button {
     height: 32px;
     border-radius: 4px;
-    margin-top: 19.78px;
+    margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 0px;
     line-height: 22px;
     background: #333;
-    color: white 
-
+    color: white;
 }
 
 .form-square label {
-    margin-bottom: 1.78px;
+    margin-bottom: 2px;
 }
 
 .form-square h1 {
@@ -92,59 +98,56 @@ h2 {
     margin-bottom: 20px;
     color: #979797;
 }
+
 /*Tabela*/
 .table {
-    width: 100% calc(100%-20px);
+    width: 90%;
     margin-left: 20px;
     margin-right: 20px
 }
 
-.first-line {
+.title-table {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    line-height: 50px;
-
+    padding-bottom: 20px;
+    line-height: 40px;
 }
-.second-line, .seventh-line { 
+
+.t-highligh {
     font-weight: bold;
+}
+
+.highligh { 
+    font-weight: bold;
+    text-align: right;
 }
 
 .table, tr, td {
     border-collapse: collapse;
 }
 
-.second-line, .third-line, .fourth-line, .fifth-line, .sixth-line  {
-    border-bottom: 1px solid #979797;  
-    line-height: 30px;
-}
-.seventh-line {
-    line-height: 30px;
-
+.edge-up {
+    border-top: 1px solid #979797;  
 }
 
-.firt-column {
-    width: 50%;
-    margin-top: 10px;
+.icon {
+    text-align: center;
 }
-
-.second-column {
-    width: 50%;
+.result {
     text-align: right;
-}
-
-.eighth-line {
     font-size: 10px;
-    text-align: right;
-    padding: 0px;
+    padding-top: 0px;
+}
 
- }
-
- .line-value {
-     text-align: right;
- }
-
-
+/*Footer*/
+.footer-content {
+    position: fixed;
+    bottom: 0;
+    background: #333333;
+    width: 100%;
+    height: 8px;
+}
 
 /*Alteração para tamanho de 768px*/
 @media screen and (min-width: 768px) {
@@ -173,16 +176,28 @@ h2 {
     }
 
     .form-square {
-        width: calc(100% -40px);
+        width: 95%;
+        border-radius: 4px;
         border: 1px solid #979797;
         margin: 20px;  
         padding-top: 20px;
         padding-bottom: 20px
     }
 
+    .line {
+        display: none;
+    }
+
+    .table {
+        justify-content: center;
+        width: 95%;
+        padding-left: 20%;
+        margin-left: 20px;
+        margin-right: 20px
+    }    
 }
 
-/*Alteração para tamanho de 768px*/
+/*Alteração para tamanho de 1112px*/
 @media screen and (min-width: 1112px) {
         .form-square .field-wrapper {
             flex-direction: column;
@@ -199,11 +214,21 @@ h2 {
         .form-square {
             width: 400px;
             padding: 20px;
+            float: left;
         }
+
         .form-square button {
             width: 100%;
             margin: 0px;
             margin-top: 20px;
+        }
+
+        .table {
+            width: 652px;
+            padding: 20px;
+            float: right;
+        }
+        
         }
 }
 
