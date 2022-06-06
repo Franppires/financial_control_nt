@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="pt-br">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="fonts.googleapis.com/css2?family=Lato&display=swap">
     </head>
-    <body>
+    <div>
         <header>
             <div class="header-wrapper">
                 <img class="logo" src="./assets/img/ellipse.png" alt="logo">
@@ -30,51 +29,59 @@
                 </div>
                 <div class="form-field field-small">
                     <label>Valor</label>
-                    <input type="number" placeholder="valor"/>
+                    <input type="number" placeholder="R$0,00"/>
                 </div>
                 <button>Adicionar transação</button>
             </div>
         </div>
         
         <hr class="line"></hr>
-        <div>
+
+        <div class="content">
             <table class="table">
-                <tr class="title-table">
-                    <td>&nbsp;</td>
-                    <td colspan="3">Extrato de transações</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="t-highligh">Mercadoria</td>
-                    <td class="highligh">Valor</td>                    
-                </tr>
-                <tr class="edge-up">
-                    <td class="icon">+</td>
-                    <td>Lorem ipsum dolor sit amet consectetur</td>
-                    <td class="highligh">R$ 12.999,99</td>
-                </tr>
-                <tr class="edge-up">
-                    <td class="icon">-</td>
-                    <td>Quis nostrud exercitation</td>
-                    <td class="highligh">R$ 99,99</td>
-                </tr>
-                <tr class="edge-up">
-                    <td class="icon">+</td>
-                    <td>Lorem ipsum</td>
-                    <td class="highligh">R$ 9,99</td>
-                </tr>
-                <tr class="edge-up">
-                    <td colspan="2"></td>
-                </tr>
-                <tr class="edge-up">
-                    <td>&nbsp;</td>
-                    <td class="t-highligh" rowspan="2">Total</td>                    
-                    <td class="highligh">R$ 12.909,99 <div class="result">[LUCRO]</div></td>
-                </tr>
-            </table> 
-        </div>
+                <thead>
+                    <tr class="title-table">
+                        <th colspan="3">Extrato de transações</th>
+                    </tr>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th class="t-highligh">Mercadoria</th>
+                        <th class="tt-highligh">Valor</th>                    
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="edge-up" id="tbody-line-one">
+                        <td class="icon">+</td>
+                        <td>Lorem ipsum dolor sit amet <div>consectetur</div></td>
+                        <td class="highligh">R$ 12.999,99</td>
+                    </tr>
+                    <tr class="edge-up">
+                        <td class="icon">-</td>
+                        <td>Quis nostrud exercitation</td>
+                        <td class="highligh">R$ 99,99</td>
+                    </tr>
+                    <tr class="edge-up">
+                        <td class="icon">+</td>
+                        <td>Lorem ipsum</td>
+                        <td class="highligh">R$ 9,99</td>
+                    </tr>
+                    <tr class="edge-up">
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr class="edge-up" id="tbody-line-one">
+                        <td>&nbsp;</td>
+                        <td class="t-highligh" rowspan="2">Total</td>                    
+                        <td class="highligh">R$ 12.909,99 <div class="result">[LUCRO]</div></td>
+                    </tr>
+                </tbody>                     
+            </table>
+        </div> 
         <footer class="footer-content">
-            
+            <div>
+                <img src="./assets/img/footer.png" alt="Rodaré">
+            </div>
+
         </footer>
     </body>
 </html>
