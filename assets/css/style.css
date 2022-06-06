@@ -19,11 +19,49 @@ body {
     margin-bottom: 17.37px;
 }
 
+/*Menu*/
+
+.menu, .close {
+    display: none;
+}
+
 .menu-hamburguer { 
-    width: 18px;
-    height: 18px;
+  margin: 18px;  
+
+}
+
+.menu-box .close { 
+    position: absolute;
     margin: 20px;
-    color: #333333;
+}
+
+.menu-hamburguer:hover .menu { 
+    display: block;
+}
+
+.menu-hamburguer:hover .close { 
+    display: block;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    width: 85%;
+    height: 100%;
+    border: 0;
+    background: #333333;
+    color: white;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.divider { 
+    display: none;
+    color: white
 }
 
 .header-wrapper {
@@ -31,6 +69,7 @@ body {
     width: 100%;
     height: 100%;
     background: #E0E0E0;
+    max-width: 1112;
 }
 
 span {
@@ -210,14 +249,15 @@ th {
     .line {
         display: none;
     }
-
+    
     .table {
         justify-content: center;
-        width: 95%;
+        width: 100%;
         padding-left: 20%;
         margin-left: 20px;
         margin-right: 20px
     }    
+
 }
 
 /*Alteração para tamanho de 1112px*/
@@ -251,9 +291,43 @@ th {
             padding: 20px;
             float: right;
         }
-        
+
+        span {
+            text-align: left;
+            padding-left: 20px;
         }
 
+        .menu-hamburguer {
+            display: none;
+        }
 
+        .menu {
+            display: flex;
+            justify-content: center;
+            background: #ffffff;
+            padding-top: 4px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 4px;
+            width: fit-content;
+            white-space: nowrap;
+            font-size: 16px bold;
+            color: #333333;
 
-  
+        }
+
+        .menu div { 
+            padding: 4px;
+        }
+
+        .divider {
+            padding-left: 17px;
+            padding-right: 17px;
+        }
+
+        .menu-box {
+            border: 1px solid white;
+            margin: 20px;
+        }
+        
+    }
