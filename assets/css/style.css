@@ -26,7 +26,7 @@ body {
 }
 
 .menu-hamburguer { 
-  margin: 18px;  
+    margin: 18px;  
 
 }
 
@@ -37,11 +37,13 @@ body {
 
 .menu-hamburguer:hover .menu { 
     display: block;
+
 }
 
-.menu-hamburguer:hover .close { 
+/**.menu-hamburguer:hover .close { 
     display: block;
-}
+}**/
+
 
 .menu {
     position: fixed;
@@ -65,6 +67,7 @@ body {
 }
 
 .header-wrapper {
+    max-width: 1112px;
     display: flex;
     width: 100%;
     height: 100%;
@@ -166,7 +169,7 @@ th {
 }
 
 .title-table, th { 
-    height: 41px;
+    height: 50px;
 }
 
 #tbody-line-one {
@@ -258,6 +261,15 @@ th {
         margin-right: 20px
     }    
 
+    .tt-highligh { 
+        text-align: right;
+    }
+
+    .menu {
+        width: 33%;
+    }
+
+
 }
 
 /*Alteração para tamanho de 1112px*/
@@ -297,37 +309,30 @@ th {
             padding-left: 20px;
         }
 
-        .menu-hamburguer {
-            display: none;
-        }
-
-        .menu {
+        .menu-box .menu { 
             display: flex;
+            flex-direction: row;
+            width: fit-content;
+            height: fit-content;
             justify-content: center;
             background: #ffffff;
-            padding-top: 4px;
             padding-left: 20px;
             padding-right: 20px;
-            padding-bottom: 4px;
-            width: fit-content;
+            margin-top: 15px;
+            margin-right: 20px;
             white-space: nowrap;
             font-size: 16px bold;
             color: #333333;
-
         }
 
-        .menu div { 
-            padding: 4px;
-        }
-
-        .divider {
+        .divider { 
+            display: block;
+            color: #333333;
             padding-left: 17px;
             padding-right: 17px;
         }
 
-        .menu-box {
-            border: 1px solid white;
-            margin: 20px;
+        .title-table { 
         }
-        
+
     }
