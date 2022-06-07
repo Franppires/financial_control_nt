@@ -27,23 +27,21 @@ body {
 
 .menu-hamburguer { 
     margin: 18px;  
-
-}
-
-.menu-box .close { 
-    position: absolute;
-    margin: 20px;
 }
 
 .menu-hamburguer:hover .menu { 
     display: block;
-
 }
 
-/**.menu-hamburguer:hover .close { 
+.menu-hamburguer:hover .close { 
     display: block;
-}**/
+}
 
+.menu-hamburguer .menu .menu-text div:hover {
+    background: #C4C4C4;
+    color: #333333;
+    padding-right: 0px;
+}
 
 .menu {
     position: fixed;
@@ -58,7 +56,16 @@ body {
     text-align: right;
     padding-right: 20px;
     font-size: 16px;
-    line-height: 30px;
+}
+
+.menu-text {
+    padding-top: px;
+    line-height: 35px;
+}
+
+.close { 
+    text-align: left;
+    padding: 20px;
 }
 
 .divider { 
