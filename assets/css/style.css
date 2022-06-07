@@ -19,31 +19,58 @@ body {
     margin-bottom: 17.37px;
 }
 
-/*Menu*/
+header { 
+    background: #E0E0E0;
+}
 
-.menu, .close {
+/*Menu*/
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1112px;
+    background: #E0E0E0;
+}
+span {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.menu-mobile, .close {
     display: none;
 }
-
+.divider { 
+    display: none;
+}
 .menu-hamburguer { 
-    margin: 18px;  
+    margin: 18px; 
 }
-
-.menu-hamburguer:hover .menu { 
+.menu-hamburguer:hover .menu-mobile, .close{ 
     display: block;
 }
-
-.menu-hamburguer:hover .close { 
-    display: block;
-}
-
-.menu-hamburguer .menu .menu-text div:hover {
+.menu .menu-mobile .menu-text div:hover {
     background: #C4C4C4;
     color: #333333;
     padding-right: 0px;
 }
-
-.menu {
+.menu-mobile .close { 
+    padding-top: 0;
+    padding: 20px;
+    text-align: left;
+}
+.menu-mobile { 
+    font-size: 16px;
+    text-align: right;
+}
+.menu-text {
+    padding-top: 50px;
+    padding-right: 20px;
+    line-height: 35px;
+}
+.menu-mobile {
     position: fixed;
     top: 0;
     right: 0;
@@ -53,42 +80,6 @@ body {
     border: 0;
     background: #333333;
     color: white;
-    text-align: right;
-    padding-right: 20px;
-    font-size: 16px;
-}
-
-.menu-text {
-    padding-top: px;
-    line-height: 35px;
-}
-
-.close { 
-    text-align: left;
-    padding: 20px;
-}
-
-.divider { 
-    display: none;
-    color: white
-}
-
-.header-wrapper {
-    max-width: 1112px;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background: #E0E0E0;
-    max-width: 1112;
-}
-
-span {
-    width: 100%;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    align-items: center;
-    margin-top: 20px;
 }
 
 /*Form Square*/
@@ -259,6 +250,10 @@ th {
     .line {
         display: none;
     }
+
+    .menu-mobile {
+        width: 33%;
+    }
     
     .table {
         justify-content: center;
@@ -272,15 +267,15 @@ th {
         text-align: right;
     }
 
-    .menu {
-        width: 33%;
-    }
-
-
 }
 
 /*Alteração para tamanho de 1112px*/
 @media screen and (min-width: 1112px) {
+        .header-wrapper { 
+            max-width: 1112px;
+        }
+
+        
         .form-square .field-wrapper {
             flex-direction: column;
             flex-wrap: nowrap;
@@ -316,7 +311,18 @@ th {
             padding-left: 20px;
         }
 
-        .menu-box .menu { 
+        .close { 
+            display: none;
+        }
+
+        .menu-text { 
+            display: flex;
+            padding-top: 0px;
+            padding-right: 0px;
+            line-height: 30px;
+        }
+
+        .menu .menu-mobile {
             display: flex;
             flex-direction: row;
             width: fit-content;
