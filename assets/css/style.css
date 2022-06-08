@@ -39,38 +39,56 @@ span {
     align-items: center;
     margin-top: 20px;
 }
-.menu-mobile, .close {
+
+.close, .menu-text, .divider {
     display: none;
-}
-.divider { 
-    display: none;
-}
+} 
+
 .menu-hamburguer { 
+    display: block;
     margin: 18px; 
 }
-.menu-hamburguer:hover .menu-mobile, .close{ 
+
+.menu .menu-mobile:hover {
     display: block;
 }
+
+.menu-mobile:hover .close { 
+    display: block;
+    padding-top: 20px;
+    padding-left:  20px;
+    text-align: left;
+}
+
+.menu-text div { 
+    padding-right: 20px;
+}
+
+.menu-mobile:hover .menu-text { 
+    display: block;
+    padding-top: 42px;
+    line-height: 35px;
+    color: #FFFFFF;
+}
+
 .menu .menu-mobile .menu-text div:hover {
     background: #C4C4C4;
     color: #333333;
-    padding-right: 0px;
 }
-.menu-mobile .close { 
-    padding-top: 0;
-    padding: 20px;
-    text-align: left;
+
+.menu .menu-mobile .menu-text:hover { 
+    color: #FFFFFF;
 }
+
+.menu-mobile:hover .menu-hamburguer {
+    display: none;
+}
+
 .menu-mobile { 
     font-size: 16px;
     text-align: right;
 }
-.menu-text {
-    padding-top: 50px;
-    padding-right: 20px;
-    line-height: 35px;
-}
-.menu-mobile {
+.menu-mobile:hover {
     position: fixed;
     top: 0;
     right: 0;
@@ -251,7 +269,7 @@ th {
         display: none;
     }
 
-    .menu-mobile {
+    .menu-mobile:hover {
         width: 33%;
     }
     
@@ -310,19 +328,14 @@ th {
             text-align: left;
             padding-left: 20px;
         }
-
-        .close { 
+        .menu .close, .menu .menu-hamburguer, .menu .menu-mobile:hover { 
+            display: none;
+        }
+        .menu .menu-text:hover { 
             display: none;
         }
 
-        .menu-text { 
-            display: flex;
-            padding-top: 0px;
-            padding-right: 0px;
-            line-height: 30px;
-        }
-
-        .menu .menu-mobile {
+        .menu .menu-text {
             display: flex;
             flex-direction: row;
             width: fit-content;
@@ -330,22 +343,23 @@ th {
             justify-content: center;
             background: #ffffff;
             padding-left: 20px;
-            padding-right: 20px;
             margin-top: 15px;
             margin-right: 20px;
             white-space: nowrap;
             font-size: 16px bold;
             color: #333333;
+            line-height: 30px;
         }
 
         .divider { 
             display: block;
             color: #333333;
-            padding-left: 17px;
-            padding-right: 17px;
+            
         }
 
-        .title-table { 
+        .desktop-1500 { 
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
         }
-
     }
