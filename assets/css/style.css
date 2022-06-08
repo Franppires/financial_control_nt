@@ -14,9 +14,9 @@ body {
     width: 30px;
     height: 27.63px;
     text-align: left;
-    margin-top: 15px;
-    margin-left: 22px;
-    margin-bottom: 17.37px;
+    padding-left: 22px;
+    padding-top: 6px;
+    padding-bottom: 9,37px;
 }
 
 header { 
@@ -28,16 +28,20 @@ header {
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 43px;
+    padding-top: 9px;
+    padding-bottom: 8px;
     max-width: 1112px;
     background: #E0E0E0;
 }
 span {
     width: 100%;
     font-size: 20px;
+    line-height: 24px;
+    padding: 8px;
     font-weight: bold;
     text-align: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 .close, .menu-text, .divider {
@@ -46,7 +50,9 @@ span {
 
 .menu-hamburguer { 
     display: block;
-    margin: 18px; 
+    padding: 9px; 
+    padding-right: 20px;
+    
 }
 
 .menu .menu-mobile:hover {
@@ -144,6 +150,7 @@ span {
 
 .form-square label {
     margin-bottom: 2px;
+    line-height: 22.22px;
 }
 
 .form-square h1 {
@@ -342,13 +349,14 @@ th {
             height: fit-content;
             justify-content: center;
             background: #ffffff;
-            padding-left: 20px;
-            margin-top: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
             margin-right: 20px;
             white-space: nowrap;
             font-size: 16px bold;
             color: #333333;
-            line-height: 30px;
+            line-height: 20px;
         }
 
         .divider { 
@@ -360,6 +368,7 @@ th {
         .desktop-1500 { 
             display: flex;
             justify-content: center;
-            margin: 0 auto;
+            margin-left: 200px;
+            margin-right: 200px;
         }
     }
