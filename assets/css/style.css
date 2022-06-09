@@ -368,7 +368,5 @@ th {
         .desktop-1500 { 
             display: flex;
             justify-content: center;
-            margin-left: 200px;
-            margin-right: 200px;
         }
     }
