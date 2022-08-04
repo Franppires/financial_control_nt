@@ -10,7 +10,7 @@ body {
 }
 
 /*Header*/
-.logo {
+.logotipo {
     width: 30px;
     height: 27.63px;
     text-align: left;
@@ -24,7 +24,7 @@ header {
 }
 
 /*Menu*/
-.header-wrapper {
+.inicio-cabecalho {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -44,7 +44,7 @@ span {
     align-items: center;
 }
 
-.close, .menu-text, .divider {
+.fechar, .menu-texto, .divisor {
     display: none;
 } 
 
@@ -55,46 +55,46 @@ span {
     
 }
 
-.menu .menu-mobile:hover {
+.menu .menu-celular:hover {
     display: block;
 }
 
-.menu-mobile:hover .close { 
+.menu-celular:hover .fechar { 
     display: block;
     padding-top: 20px;
     padding-left:  20px;
     text-align: left;
 }
 
-.menu-text div { 
+.menu-texto div { 
     padding-right: 20px;
 }
 
-.menu-mobile:hover .menu-text { 
+.menu-celular:hover .menu-texto { 
     display: block;
     padding-top: 42px;
     line-height: 35px;
     color: #FFFFFF;
 }
 
-.menu .menu-mobile .menu-text div:hover {
+.menu .menu-celular .menu-texto div:hover {
     background: #C4C4C4;
     color: #333333;
 }
 
-.menu .menu-mobile .menu-text:hover { 
+.menu .menu-celular .menu-texto:hover { 
     color: #FFFFFF;
 }
 
-.menu-mobile:hover .menu-hamburguer {
+.menu-celular:hover .menu-hamburguer {
     display: none;
 }
 
-.menu-mobile { 
+.menu-celular { 
     font-size: 16px;
     text-align: right;
 }
-.menu-mobile:hover {
+.menu-celular:hover {
     position: fixed;
     top: 0;
     right: 0;
@@ -107,7 +107,7 @@ span {
 }
 
 /*Form Square*/
-.form-square {
+.inicio-formulario {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -115,13 +115,13 @@ span {
     margin-right: 20px;
 }
 
-.form-square .field-wrapper {
+.inicio-formulario .campo-formulario {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.form-field {
+.campo-formulario {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -130,13 +130,13 @@ span {
     margin-bottom: 0px;
 }
 
-.form-square input, .form-square select {
+.inicio-formulario input, .inicio-formulario select {
     border: 1px solid #979797; 
     border-radius: 4px;
     height: 32px;
 }
 
-.form-square button {
+.inicio-formulario button {
     height: 32px;
     border-radius: 4px;
     margin-top: 20px;
@@ -148,12 +148,12 @@ span {
     color: white;
 }
 
-.form-square label {
+.inicio-formulario label {
     margin-bottom: 2px;
     line-height: 22.22px;
 }
 
-.form-square h1 {
+.inicio-formulario h1 {
     display: none;
 }
 
@@ -166,17 +166,17 @@ span {
 }
 
 /*Tabela*/
-.content {
+.contente {
     display: flex;
 }
-.table {
+.tabela {
     width: 100%;
     margin-right: 20px;
     margin-left: 20px;
     height: 30px;
 }
 
-.table, tr, td, th {
+.tabela, tr, td, th {
     border-collapse: collapse;
 } 
 
@@ -184,39 +184,43 @@ th {
     vertical-align: bottom; 
 }
 
-.title-table {
+.titulo-tabela {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
     vertical-align: bottom;
 }
 
-.title-table, th { 
-    height: 50px;
+.titulo-tabela, th { 
+    height: 30px;
 }
 
 #tbody-line-one {
-    height: 49px;
+    height: 20px;
 }
 
-.tt-highligh { 
+.tt-destaque { 
     text-align: center; 
 }
 
-.t-highligh {
+.t-destaque {
     font-weight: bold;
     text-align: left;
 }
 
-.highligh { 
+.borda-acima {
+    border-top: 1px solid #979797;  
+}
+
+
+
+/*.destaque { 
     font-weight: bold;
     text-align: right;
     height: 33px;
 }
 
-.edge-up {
-    border-top: 1px solid #979797;  
-}
+
 
 .icon {
     text-align: center;
@@ -225,7 +229,7 @@ th {
     text-align: right;
     font-size: 10px;
     padding-top: 0px;
-}
+}/*
 
 /*Footer*/
 .footer-content {
@@ -239,31 +243,31 @@ th {
 
 /*Alteração para tamanho de 768px*/
 @media screen and (min-width: 768px) {
-    .form-square h1 {
+    .inicio-formulario h1 {
         display: block;
         text-align: center;
         font-size: 18px;
     }
     
-    .form-square .field-wrapper {
+    .inicio-formulario .campo-formulario {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-end;
     }
 
-    .form-field {
+    .campo-formulario {
         margin-top: 0px;
     }
 
-    .field-small {
+    .campo-pequeno {
         width: calc(20% - 30px);
     }
 
-    .field-big {
+    .campo-grande {
         width: calc(60% - 60px);
     }
 
-    .form-square {
+    .inicio-formulario {
         width: 95%;
         border-radius: 4px;
         border: 1px solid #979797;
@@ -276,11 +280,11 @@ th {
         display: none;
     }
 
-    .menu-mobile:hover {
+    .menu-celular:hover {
         width: 33%;
     }
     
-    .table {
+    .tabela {
         justify-content: center;
         width: 100%;
         padding-left: 20%;
@@ -288,7 +292,7 @@ th {
         margin-right: 20px
     }    
 
-    .tt-highligh { 
+    .tt-destaque { 
         text-align: right;
     }
 
@@ -296,36 +300,36 @@ th {
 
 /*Alteração para tamanho de 1112px*/
 @media screen and (min-width: 1112px) {
-        .header-wrapper { 
+        .inicio-cabecalho { 
             max-width: 1112px;
         }
 
         
-        .form-square .field-wrapper {
+        .inicio-formulario .campo-formulario {
             flex-direction: column;
             flex-wrap: nowrap;
             justify-content: center;
         }
 
-        .form-square .form-field {
+        .inicio-formulario .campo-formulario {
             margin: 0;
             margin-top: 20px;
             width: 100%;
         }
 
-        .form-square {
+        .inicio-formulario {
             width: 400px;
             padding: 20px;
             float: left;
         }
 
-        .form-square button {
+        .inicio-formulario button {
             width: 100%;
             margin: 0px;
             margin-top: 20px;
         }
 
-        .table {
+        .tabela {
             width: 652px;
             padding: 20px;
             float: right;
@@ -335,14 +339,14 @@ th {
             text-align: left;
             padding-left: 20px;
         }
-        .menu .close, .menu .menu-hamburguer, .menu .menu-mobile:hover { 
+        .menu .fechar, .menu .menu-hamburguer, .menu .menu-celular:hover { 
             display: none;
         }
-        .menu .menu-text:hover { 
+        .menu .menu-texto:hover { 
             display: none;
         }
 
-        .menu .menu-text {
+        .menu .menu-texto {
             display: flex;
             flex-direction: row;
             width: fit-content;
@@ -359,14 +363,17 @@ th {
             line-height: 20px;
         }
 
-        .divider { 
+        .divisor { 
             display: block;
             color: #333333;
             
         }
 
-        .desktop-1500 { 
-            display: flex;
-            justify-content: center;
-        }
+     
+    }
+
+    .desktop-1500 { 
+        display: flex;
+        justify-content: center;
+        
     }

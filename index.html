@@ -1,110 +1,87 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="stylesheet" href="fonts.googleapis.com/css2?family=Lato&display=swap">
-    </head>
-    <div>
-        <header>
-            <div class="desktop-1500">
-                <div class="header-wrapper">
-                    <img class="logo" src="./assets/img/ellipse.png" alt="logo">
-                    <span>Controle de financeiro</span>
-                    <div class="menu">
-                        <div class="menu-mobile">
-                            <div class="menu-hamburguer">
-                                <img src="./assets/img/menu.png" alt="menu" width="24px">   
-                            </div> 
-                            <div class="close">
-                                <img src="./assets/img/x.png" alt="fechar">
-                            </div>
-                            <div class="desktop">
-                                <div class="menu-text">
-                                    <div>Cadastro de transações</div>
-                                    <div class="divider">|</div>
-                                    <div>Limpar dados</div>
-                                </div>    
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+<div>
+    <header>
+        <div class="desktop-1500">
+            <div class="inicio-cabecalho">
+                <img class="logotipo" src="./assets/img/ellipse.png" alt="logotipo">
+                <span>Controle de financeiro</span>
+                <div class="menu">
+                    <div class="menu-celular">
+                        <div class="menu-hamburguer">
+                            <img src="./assets/img/menu.png" alt="menu" width="24px">
+                        </div>
+                        <div class="fechar">
+                            <img src="./assets/img/x.png" alt="fechar">
+                        </div>
+                        <div class="desktop">
+                            <div class="menu-texto">
+                                <div>Cadastro de transações</div>
+                                <div class="divisor">|</div>
+                                <div onclick="limpar()">Limpar dados</div>
                             </div>
                         </div>
-                        
                     </div>
+
                 </div>
-            </div>    
-        </header>        
+            </div>
+        </div>
+    </header>
+</div>
+<div class="desktop-1500">
+    <form class="inicio-formulario">
+        <h1>Nova transação</h1>
+        <div class="campo-formulario">
+            <div class="campo-formulario campo-pequeno">
+                <label>Tipo de transação</label>
+                <select id="transacao">
+                    <option>Compra</option>
+                    <option>Venda</option>
+                </select>
+            </div>
+            <div class="campo-formulario campo-grande">
+                <label>Nome da mercadoria</label>
+                <input type="texto" placeholder="Input" required />
+            </div>
+            <div class="campo-formulario campo-pequeno">
+                <label>Valor</label>
+                <input type="numero" placeholder="R$0,00" />
+            </div>
+            <button>Adicionar transação</button>
+        </div>
+    </form>
+    <section class="contente">
+        <table class="tabela">
+            <thead>
+                <tr class="titulo-tabela">
+                    <th colspan="3">Extrato de transações</th>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th class="t-destaque">Mercadoria</th>
+                    <th class="tt-destaque">Valor</th>
+                </tr>
+            </thead>
+
+        </table>
+    </section>
+</div>
+<footer class="rodape">
+    <div>
+        <img src="./assets/img/footer.png" alt="rodapé">
     </div>
-        <div class="desktop-1500">
-            <div class="form-square">
-                <h1>Nova transação</h1>
-                <div class="field-wrapper">
-                    <div class="form-field field-small">
-                        <label>Tipo de transação</label>
-                        <select>
-                            <option>Compra</option>
-                            <option>Venda</option>
-                        </select>  
-                    </div>
-                    <div class="form-field field-big">
-                        <label>Nome da mercadoria</label>
-                        <input type="text" placeholder="Input"/>
-                    </div>
-                    <div class="form-field field-small">
-                        <label>Valor</label>
-                        <input type="number" placeholder="R$0,00"/>
-                    </div>
-                    <button>Adicionar transação</button>
-                </div>
-            </div>
-          
-        
-            <hr class="line"></hr>
 
-            <div class="content">
-                <table class="table">
-                    <thead>
-                        <tr class="title-table">
-                            <th colspan="3">Extrato de transações</th>
-                        </tr>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th class="t-highligh">Mercadoria</th>
-                            <th class="tt-highligh">Valor</th>                    
-                        </tr>
-                    </thead>
+</footer>
+<script src="./javascript/index.js"></script>
+</body>
 
-                    <tbody>
-                        <tr class="edge-up" id="tbody-line-one">
-                            <td class="icon">+</td>
-                            <td>Lorem ipsum dolor sit amet <div>consectetur</div></td>
-                            <td class="highligh">R$ 12.999,99<div>&nbsp;</div></td>
-                        </tr>
-                        <tr class="edge-up">
-                            <td class="icon">-</td>
-                            <td>Quis nostrud exercitation</td>
-                            <td class="highligh">R$ 99,99</td>
-                        </tr>
-                        <tr class="edge-up">
-                            <td class="icon">+</td>
-                            <td>Lorem ipsum</td>
-                            <td class="highligh">R$ 9,99</td>
-                        </tr>
-                        <tr class="edge-up">
-                            <td colspan="2"></td>
-                        </tr>
-                        <tr class="edge-up" id="tbody-line-one">
-                            <td>&nbsp;</td>
-                            <td class="t-highligh" rowspan="2">Total</td>                    
-                            <td class="highligh">R$ 12.909,99<div class="result">[LUCRO]</div></td>
-                        </tr>
-                    </tbody>                     
-                </table>
-            </div>
-        </div> 
-        <footer class="footer-content">
-            <div>
-                <img src="./assets/img/footer.png" alt="rodapé">
-            </div>
-
-        </footer>
-    </body>
 </html>
