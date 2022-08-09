@@ -38,25 +38,26 @@
     </header>
 </div>
 <div class="desktop-1500">
-    <form class="inicio-formulario">
+    <form  class="inicio-formulario" onsubmit="enviartransacao(event);">
         <h1>Nova transação</h1>
         <div class="campo-formulario">
             <div class="campo-formulario campo-pequeno">
-                <label>Tipo de transação</label>
-                <select id="transacao">
-                    <option>Compra</option>
-                    <option>Venda</option>
+                <label for="tipo-transacao">Tipo de transação</label>
+                <select id="tipo-transacao" required>
+                    <option value="" selected>Selecione</option>
+                    <option value="compra">Compra</option>
+                    <option value="venda">Venda</option>
                 </select>
             </div>
             <div class="campo-formulario campo-grande">
-                <label>Nome da mercadoria</label>
-                <input type="texto" placeholder="Input" required />
+                <label for="nome-transacao">Nome da mercadoria</label>
+                <input id="nome-mercadoria" type="texto" placeholder="Input" required />
             </div>
             <div class="campo-formulario campo-pequeno">
-                <label>Valor</label>
-                <input type="numero" placeholder="R$0,00" />
+                <label for="valor-transacao">Valor</label>
+                <input onkeyup="formatarMoeda()" id="valor" type="numero" placeholder="R$0,00" required />
             </div>
-            <button>Adicionar transação</button>
+            <button type="submit" id="submit">Adicionar transação</button>
         </div>
     </form>
     <section class="contente">
@@ -71,7 +72,8 @@
                     <th class="tt-destaque">Valor</th>
                 </tr>
             </thead>
-
+            <tbody>
+            </tbody>
         </table>
     </section>
 </div>
