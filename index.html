@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <title> 
+        Controle Financeiro
+    </title>
 </head>
 <div>
     <header>
@@ -23,11 +27,12 @@
                         <div class="fechar">
                             <img src="./assets/img/x.png" alt="fechar">
                         </div>
+
                         <div class="desktop">
                             <div class="menu-texto">
                                 <div>Cadastro de transações</div>
                                 <div class="divisor">|</div>
-                                <div onclick="limpar()">Limpar dados</div>
+                                <button onclick="limparExtrato()" id="limpar-extrato">Limpar dados</button>
                             </div>
                         </div>
                     </div>
@@ -38,48 +43,49 @@
     </header>
 </div>
 <div class="desktop-1500">
-    <form  class="inicio-formulario" onsubmit="enviartransacao(event);">
+    <form class="inicio-formulario" onsubmit="adicionarTransacao(event)">
         <h1>Nova transação</h1>
         <div class="campo-formulario">
             <div class="campo-formulario campo-pequeno">
-                <label for="tipo-transacao">Tipo de transação</label>
-                <select id="tipo-transacao" required>
+                <label>Tipo de transação</label>
+                <select id="selecionar-transacao" required>
                     <option value="" selected>Selecione</option>
-                    <option value="compra">Compra</option>
-                    <option value="venda">Venda</option>
+                    <option value="Compra">Compra</option>
+                    <option value="Venda">Venda</option>
                 </select>
             </div>
             <div class="campo-formulario campo-grande">
-                <label for="nome-transacao">Nome da mercadoria</label>
+                <label>Nome da mercadoria</label>
                 <input id="nome-mercadoria" type="texto" placeholder="Input" required />
             </div>
             <div class="campo-formulario campo-pequeno">
-                <label for="valor-transacao">Valor</label>
-                <input onkeyup="formatarMoeda()" id="valor" type="numero" placeholder="R$0,00" required />
+                <label>Valor</label>
+                <input id="valor" onkeyup="formatarMoeda()" onfocus="this.value = ''"  type="numero" placeholder="R$0,00" required />
             </div>
-            <button type="submit" id="submit">Adicionar transação</button>
+            <button type="submit">Adicionar transação</button> <!-- submit = pede a para preencher as informações dos inputs  -->
         </div>
     </form>
     <section class="contente">
         <table class="tabela">
             <thead>
-                <tr class="titulo-tabela">
+                <tr class="titulo-tabela" id="extrato">
                     <th colspan="3">Extrato de transações</th>
-                </tr>
-                <tr>
-                    <th>&nbsp;</th>
-                    <th class="t-destaque">Mercadoria</th>
-                    <th class="tt-destaque">Valor</th>
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td></td>
+                    <td>Mercadoria</td>
+                    <td>Valor</td>
+                    
+                </tr>
             </tbody>
         </table>
     </section>
 </div>
 <footer class="rodape">
     <div>
-        <img src="./assets/img/footer.png" alt="rodapé">
+        <img src="./assets/img/footer.png" alt="rodapé" width="1500" height="8">
     </div>
 
 </footer>

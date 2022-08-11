@@ -214,7 +214,7 @@ th {
 
 
 
-/*.destaque { 
+.destaque { 
     font-weight: bold;
     text-align: right;
     height: 33px;
@@ -236,8 +236,7 @@ th {
     position: fixed;
     bottom: 0;
     background: #333333;
-    width: 100%;
-    height: 8px;
+    height: 3px;
 }
 
 
