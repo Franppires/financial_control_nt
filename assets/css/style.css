@@ -345,6 +345,14 @@ th {
             display: none;
         }
 
+        .limpar { 
+            background-color: white;
+            border: white;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            
+        }
+
         .menu .menu-texto {
             display: flex;
             flex-direction: row;
