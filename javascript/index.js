@@ -93,30 +93,9 @@ function desenhaTabela() {
 }
 //mascara para input de valor 
 // regex para letras, verifica as teclas digitadas e previne 
-const padraoLetras = /[^0-9]/; 
-
-function mask(e) { 
-    if(padraoLetras.test(e.key)) { 
-        console.log(e.key); 
-        e.preventDefault();
-        return; 
-    }
-    if (!e.target.value) return; // retorna se for diferente 
-    valor = e.target.value.toString(); // recebe valor e converte para string 
-    valor = valor.replace(/[\D]+/g, ""); // muda o valor se for dif. de numero para vazio 
-    valor = valor.replace(/([0-9]{1})$/g, ",$1") // recebe formato moeda e coloca virgula 
-
-    if (valor.length >= 6) { // se for maior ou igual
-        while (/([0-9]{4})[,|\.]/g.test(valor)) { 
-            valor = valor.replace(/([0-9]{1})$/g, ",$1");   // acrescenta virgula   
-            valor = valor.replace(/([0-9]{3})[,|\.]/g, ".$1"); // casa decimal
-        }
-    }
-    e.target.value = valor;
-}
 
 
-gi
+
 
 // // ler abela pelo onsubmit 
 // function lerTabela(e) { 
