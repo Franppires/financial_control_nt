@@ -8,87 +8,109 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
-    <title> 
-        Controle Financeiro
-    </title>
+    <title>Controle Financeiro</title>
 </head>
-<div>
-    <header>
-        <div class="desktop-1500">
-            <div class="inicio-cabecalho">
-                <img class="logotipo" src="./assets/img/ellipse.png" alt="logotipo">
-                <span>Controle de financeiro</span>
-                <div class="menu">
-                    <div class="menu-celular">
-                        <div class="menu-hamburguer">
-                            <img src="./assets/img/menu.png" alt="menu" width="24px">
-                        </div>
-                        <div class="fechar">
-                            <img src="./assets/img/x.png" alt="fechar">
-                        </div>
-
-                        <div class="desktop">
-                            <div class="menu-texto">
-                                <div>Cadastro de transações</div>
-                                <div class="divisor">|</div>
-                                <button onclick="limparExtrato()" class="limpar" id="limpar-extrato">Limpar dados</button>
+<body>
+    <div>
+        <header>
+            <div class="area-trabalho-1500">
+                <div class="embrulho-cabecalho">
+                    <img class="logo" src="./assets/img/ellipse.png" alt="logotipo">
+                    <span>Controle de financeiro</span>
+                    <div class="menu">
+                        <div class="menu-celular">
+                            <div class="menu-hamburguer">
+                                <img src="./assets/img/menu.png" alt="menu" width="24px">
+                            </div>
+                            <div class="fechar">
+                                <img src="./assets/img/x.png" alt="fechar">
+                            </div>
+                            <div class="area-trabalho">
+                                <div class="menu-texto">
+                                    <div>Cadastro de transações</div>
+                                    <div class="divisor">|</div>
+                                    <button onclick="limparExtrato()" class="limpar" id="limpar-extrato">Limpar dados</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
-    </header>
-</div>
-<div class="desktop-1500">
-    <form class="inicio-formulario" >
-        <h1>Nova transação</h1>
-        <div class="campo-formulario">
-            <div class="campo-formulario campo-pequeno">
-                <label>Tipo de transação</label>
-                <select id="selecionar-transacao" required>
-                    <option value="" selected>Selecione</option>
-                    <option value="Compra">Compra</option>
-                    <option value="Venda">Venda</option>
-                </select>
-            </div>
-            <div class="campo-formulario campo-grande">
-                <label>Nome da mercadoria</label>
-                <input id="nome-mercadoria" type="texto" placeholder="Input" required />
-            </div>
-            <div class="campo-formulario campo-pequeno">
-                <label>Valor</label>
-                <input onkeyup="valor" id="valor" type="numero" placeholder="R$0,00" required />
-            </div>
-            <button type="submit">Adicionar transação</button> <!-- submit = pede a para preencher as informações dos inputs  -->
-        </div>
-    </form>
-    <section class="contente">
-        <h1>Extrato de transações</h1>
-        <table>
-             <thead> 
-                <tr>
-                    <th></th>
-                    <th>Mercadoria</th>
-                    <th>Valor</th>
-                </tr>
-             </thead>
-             <tbody></tbody>
-            
-        </table>
-        
-
-    </section>
-</div>
-<footer class="rodape">
-    <div>
-        <img src="./assets/img/footer.png" alt="rodapé" width="1500" height="8">
+        </header>
     </div>
-
-</footer>
-<script src="./javascript/index.js"></script>
+    <div class="area-trabalho-1500">
+        <form onsubmit="lerTabela(event)" class="forma-quadrada" >
+            <h1>Nova transação</h1>
+            <div class="embrulho-campo">
+                <div class="campo-formulario pequeno">
+                    <label for="">Tipo de transação</label>
+                    <select id="selecionar-transacao" required>
+                        <option value="" selected style="color: #979797;">Selecione</option>
+                        <option value="Compra">Compra</option>
+                        <option value="Venda">Venda</option>
+                    </select>
+                </div>
+                <div onkeypress="adicionarTransacao(event)" class="campo-formulario grande">
+                    <label for="">Nome da mercadoria</label>
+                    <input id="nome-mercadoria" type="texto" placeholder="Input" required />
+                </div>
+                <div class="campo-formulario pequeno">
+                    <label for="">Valor</label>
+                    <input onkeyup="valor" id="valor" type="numero" placeholder="R$0,00" required />
+                </div>
+                <button class="botao" type="submit">Adicionar transação</button> <!-- submit = pede a para preencher as informações dos inputs  -->
+            </div>
+        </form>
+        <hr class="linha"></hr>
+        <section class="contente">
+            <table class="extrato-tabela">
+                <thead>
+                    <tr class="titulo-tabela">
+                        <th colspan="3">Extrato de transações</th>
+                    </tr>
+                    <!-- <tr>
+                        <th>&nbsp;</th>
+                        <th class="destaque-mercadoria">Mercadoria</th>
+                        <th class="destaque-valor">Valor</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <tr class="borda-acima" id="uma-linha">
+                        <td class="icone">+</td>
+                        <td>Lorem ipsum dolor sit amet
+                            <div>consectetur</div>
+                        </td>
+                        <td class="destaque">R$ 12.999,99
+                            <div>&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr class="borda-acima">
+                        <td class="icone">-</td>
+                        <td>Quis nostrud exercitation</td>
+                        <td class="destaque">R$ 99,99</td>
+                    </tr>
+                    <tr class="borda-acima">
+                        <td class="icone">+</td>
+                        <td>Lorem ipsum</td>
+                        <td class="destaque">R$ 9,99</td>
+                    </tr>
+                    <tr class="borda-acima">
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr class="borda-acima" id="uma-linha">
+                        <td>&nbsp;</td>
+                        <td class="destaque-mercadoria" rowspan="2">Total</td>
+                        <td class="destaque">R$ 12.909,99
+                            <div class="resultado">[LUCRO]</div>
+                        </td>
+                    </tr>
+                </tbody> -->
+            </table>    
+        </section>
+    </div>
+    <script src="./javascript/index.js"></script>
 </body>
-
+<footer class="rodape">
+    <div><img src="./assets/img/footer.png" alt="rodapé"></div>
+</footer>
 </html>

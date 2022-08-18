@@ -1,4 +1,3 @@
-
 /*Geral*/
 body {
     width: 100%;
@@ -10,7 +9,7 @@ body {
 }
 
 /*Header*/
-.logotipo {
+.logo {
     width: 30px;
     height: 27.63px;
     text-align: left;
@@ -18,13 +17,12 @@ body {
     padding-top: 6px;
     padding-bottom: 9,37px;
 }
-
 header { 
     background: #E0E0E0;
 }
 
 /*Menu*/
-.inicio-cabecalho {
+.embrulho-cabecalho {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -43,53 +41,43 @@ span {
     text-align: center;
     align-items: center;
 }
-
 .fechar, .menu-texto, .divisor {
     display: none;
 } 
-
 .menu-hamburguer { 
     display: block;
     padding: 9px; 
     padding-right: 20px;
     
 }
-
 .menu .menu-celular:hover {
     display: block;
 }
-
 .menu-celular:hover .fechar { 
     display: block;
     padding-top: 20px;
     padding-left:  20px;
     text-align: left;
 }
-
 .menu-texto div { 
     padding-right: 20px;
 }
-
 .menu-celular:hover .menu-texto { 
     display: block;
     padding-top: 42px;
     line-height: 35px;
     color: #FFFFFF;
 }
-
 .menu .menu-celular .menu-texto div:hover {
     background: #C4C4C4;
     color: #333333;
 }
-
 .menu .menu-celular .menu-texto:hover { 
     color: #FFFFFF;
 }
-
 .menu-celular:hover .menu-hamburguer {
     display: none;
 }
-
 .menu-celular { 
     font-size: 16px;
     text-align: right;
@@ -107,20 +95,18 @@ span {
 }
 
 /*Form Square*/
-.inicio-formulario {
+.forma-quadrada {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-right: 20px;
 }
-
-.inicio-formulario .campo-formulario {
+.forma-quadrada .embrulho-campo {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .campo-formulario {
     display: flex;
     flex-direction: column;
@@ -129,14 +115,12 @@ span {
     margin-right: 20px;
     margin-bottom: 0px;
 }
-
-.inicio-formulario input, .inicio-formulario select {
+.forma-quadrada input, .forma-quadrada select {
     border: 1px solid #979797; 
     border-radius: 4px;
     height: 32px;
 }
-
-.inicio-formulario button {
+.forma-quadrada button {
     height: 32px;
     border-radius: 4px;
     margin-top: 20px;
@@ -147,17 +131,14 @@ span {
     background: #333;
     color: white;
 }
-
-.inicio-formulario label {
+.forma-quadrada label {
     margin-bottom: 2px;
     line-height: 22.22px;
 }
-
-.inicio-formulario h1 {
+.forma-quadrada h1 {
     display: none;
 }
-
-.line {
+.linha {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 30px;
@@ -169,171 +150,141 @@ span {
 .contente {
     display: flex;
 }
-.tabela {
+.extrato-tabela {
     width: 100%;
     margin-right: 20px;
     margin-left: 20px;
     height: 30px;
 }
-
-.tabela, tr, td, th {
+.extrato-tabela, tr, td, th {
     border-collapse: collapse;
-} 
-
+}
 th {
     vertical-align: bottom; 
 }
-
 .titulo-tabela {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
     vertical-align: bottom;
 }
-
 .titulo-tabela, th { 
-    height: 30px;
+    height: 50px;
 }
-
-#tbody-line-one {
-    height: 20px;
+#uma-linha {
+    height: 49px;
 }
-
-.tt-destaque { 
+.destaque-valor { 
     text-align: center; 
 }
-
-.t-destaque {
+.destaque-mercadoria {
     font-weight: bold;
     text-align: left;
 }
-
-.borda-acima {
-    border-top: 1px solid #979797;  
-}
-
-
-
 .destaque { 
     font-weight: bold;
     text-align: right;
     height: 33px;
 }
-
-
-
-.icon {
+.borda-acima {
+    border-top: 1px solid #979797;  
+}
+.icone {
     text-align: center;
 }
-.result {
+.resultado {
     text-align: right;
     font-size: 10px;
     padding-top: 0px;
 }/*
 
 /*Footer*/
-.footer-content {
+.rodape {
     position: fixed;
     bottom: 0;
     background: #333333;
-    height: 3px;
+    width: 100%;
+    height: 8px;
 }
-
 
 /*Alteração para tamanho de 768px*/
 @media screen and (min-width: 768px) {
-    .inicio-formulario h1 {
+    .forma-quadrada h1 {
         display: block;
         text-align: center;
         font-size: 18px;
     }
-    
-    .inicio-formulario .campo-formulario {
+    .forma-quadrada .embrulho-campo {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-end;
     }
-
     .campo-formulario {
         margin-top: 0px;
     }
-
-    .campo-pequeno {
+    .pequeno {
         width: calc(20% - 30px);
     }
-
-    .campo-grande {
+    .grande {
         width: calc(60% - 60px);
     }
-
-    .inicio-formulario {
-        width: 95%;
+    .forma-quadrada {
+        width: 100%;
         border-radius: 4px;
         border: 1px solid #979797;
         margin: 20px;  
         padding-top: 20px;
         padding-bottom: 20px
     }
-
-    .line {
+    .linha {
         display: none;
-    }
-
+    } 
     .menu-celular:hover {
         width: 33%;
     }
-    
-    .tabela {
+    .extrato-tabelaa {
         justify-content: center;
         width: 100%;
         padding-left: 20%;
         margin-left: 20px;
         margin-right: 20px
     }    
-
-    .tt-destaque { 
+    .destaque-valor { 
         text-align: right;
     }
-
 }
 
 /*Alteração para tamanho de 1112px*/
 @media screen and (min-width: 1112px) {
-        .inicio-cabecalho { 
+        .embrulho-cabecalho { 
             max-width: 1112px;
+            justify-content: center;
         }
-
-        
-        .inicio-formulario .campo-formulario {
+        .forma-quadrada .embrulho-campo {
             flex-direction: column;
             flex-wrap: nowrap;
             justify-content: center;
         }
-
-        .inicio-formulario .campo-formulario {
+        .forma-quadrada .campo-formulario {
             margin: 0;
             margin-top: 20px;
             width: 100%;
         }
-
-        .inicio-formulario {
+        .forma-quadrada {
             width: 400px;
             padding: 20px;
             float: left;
         }
-
-        .inicio-formulario button {
+        .forma-quadrada button {
             width: 100%;
             margin: 0px;
             margin-top: 20px;
         }
-
-        .tabela {
+        .extrato-tabela {
             width: 652px;
             padding: 20px;
             float: right;
         }
-
         span {
             text-align: left;
             padding-left: 20px;
@@ -344,7 +295,6 @@ th {
         .menu .menu-texto:hover { 
             display: none;
         }
-
         .limpar { 
             background-color: white;
             border: white;
@@ -352,7 +302,6 @@ th {
             font-family: 'Lato', sans-serif;
             
         }
-
         .menu .menu-texto {
             display: flex;
             flex-direction: row;
@@ -369,18 +318,16 @@ th {
             color: #333333;
             line-height: 20px;
         }
-
         .divisor { 
             display: block;
             color: #333333;
             
         }
-
-     
     }
 
-    .desktop-1500 { 
-        display: flex;
-        justify-content: center;
-        
-    }
+.area-trabalho-1500 { 
+    display: flex;
+    justify-content: center;
+    margin-left: 200px;
+    margin-right: 200px; 
+} 
