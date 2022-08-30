@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,103 +11,70 @@
     <title>Controle Financeiro</title>
 </head>
 <body>
-    <div>
-        <header>
-            <div class="area-trabalho-1500">
-                <div class="embrulho-cabecalho">
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="navbar-brand"> 
+                    <a href="#" class="brand"></a>
                     <img class="logo" src="./assets/img/ellipse.png" alt="logotipo">
-                    <span>Controle de financeiro</span>
-                    <div class="menu">
-                        <div class="menu-celular">
-                            <div class="menu-hamburguer">
-                                <img src="./assets/img/menu.png" alt="menu" width="24px">
-                            </div>
-                            <div class="fechar">
-                                <img src="./assets/img/x.png" alt="fechar">
-                            </div>
-                            <div class="area-trabalho">
-                                <div class="menu-texto">
-                                    <div>Cadastro de transações</div>
-                                    <div class="divisor">|</div>
-                                    <button onclick="limparExtrato()" class="limpar" id="limpar-extrato">Limpar dados</button>
-                                </div>
-                            </div>
+                    <h1 class="system-title">Controle de financeiro</h1>
+                </div>         
+                <div class="menu-hover-control">
+                <img src="./assets/img/menu.png" alt="menu" width="24px">
+
+                <nav class="navbar-menu">
+                    <img src="./assets/img/x.png" alt="fechar">
+                    <ul>
+                        <li><a href="#">Cadastro de transações</a></li>
+                        <li><a href="#">Limpar dados</a></li>
+                    </ul>
+                </nav>
+            </div>    
+        </div>        
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <section class="section-new-transaction">
+                <form id="myForm">
+                    <h1>Nova transação</h1>
+                    <div class="form-group">
+                        <div class="form-input">
+                            <label for="type-transaction">Tipo de transação</label>
+                            <select required>
+                                <option value="" selected style="color: #979797;">Selecione</option>
+                                <option value="Compra">Compra</option>
+                                <option value="Venda">Venda</option>
+                            </select>
                         </div>
+                        <div class="form-input">
+                            <label for="name-commodity">Nome da mercadoria</label>
+                            <input type="text" placeholder="Input" required />
+                        </div>
+                        <div class="form-input">
+                            <label for="value-commodity">Valor</label>
+                            <input onkeypress="mask(event) "type="number" placeholder="R$0,00" required />
+                        </div>
+                        <button type="submit">Adicionar transação</button> <!-- submit = pede a para preencher as informações dos inputs  -->
                     </div>
-                </div>
-            </div>
-        </header>
-    </div>
-    <div class="area-trabalho-1500">
-        <form onsubmit="lerTabela(event)" class="forma-quadrada" >
-            <h1>Nova transação</h1>
-            <div class="embrulho-campo">
-                <div class="campo-formulario pequeno">
-                    <label for="">Tipo de transação</label>
-                    <select id="selecionar-transacao" required>
-                        <option value="" selected style="color: #979797;">Selecione</option>
-                        <option value="Compra">Compra</option>
-                        <option value="Venda">Venda</option>
-                    </select>
-                </div>
-                <div onkeypress="adicionarTransacao(event)" class="campo-formulario grande">
-                    <label for="">Nome da mercadoria</label>
-                    <input id="nome-mercadoria" type="texto" placeholder="Input" required />
-                </div>
-                <div class="campo-formulario pequeno">
-                    <label for="">Valor</label>
-                    <input onkeypress="mask(event)" id="valor-mercadoria" type="numero" placeholder="R$0,00" required />
-                </div>
-                <button class="botao" type="submit">Adicionar transação</button> <!-- submit = pede a para preencher as informações dos inputs  -->
-            </div>
-        </form>
-        <hr class="linha"></hr>
-        <section class="contente">
-            <table class="extrato-tabela">
-                <thead>
-                    <tr class="titulo-tabela">
-                        <th colspan="3">Extrato de transações</th>
-                    </tr>
-                    <!-- <tr>
-                        <th>&nbsp;</th>
-                        <th class="destaque-mercadoria">Mercadoria</th>
-                        <th class="destaque-valor">Valor</th>
-                    </tr>
-                </thead>
-                <tbody> 
-                    <tr class="borda-acima" id="uma-linha">
-                        <td class="icone">+</td>
-                        <td>Lorem ipsum dolor sit amet
-                            <div>consectetur</div>
-                        </td>
-                        <td class="destaque">R$ 12.999,99
-                            <div>&nbsp;</div>
-                        </td>
-                    </tr>
-                    <tr class="borda-acima">
-                        <td class="icone">-</td>
-                        <td>Quis nostrud exercitation</td>
-                        <td class="destaque">R$ 99,99</td>
-                    </tr>
-                    <tr class="borda-acima">
-                        <td class="icone">+</td>
-                        <td>Lorem ipsum</td>
-                        <td class="destaque">R$ 9,99</td>
-                    </tr>
-                    <tr class="borda-acima">
-                        <td colspan="2"></td>
-                    </tr>
-                    <tr class="borda-acima" id="uma-linha">
-                        <td>&nbsp;</td>
-                        <td class="destaque-mercadoria" rowspan="2">Total</td>
-                        <td class="destaque">R$ 12.909,99
-                            <div class="resultado">[LUCRO]</div>
-                        </td>
-                    </tr>
-                </tbody> -->
-            </table>    
-        </section>
-    </div>
+                </form>
+            </section>
+            <hr class="line"></hr>
+            <section class="section-transaction-statement">
+                <h1>Extrato de transações</h1>
+                <table class="table-transaction-statement">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Mercadoria</th>
+                            <th class="text-right">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot></tfoot>
+                </table>    
+            </section>
+        </div>      
+    </main>
     <script src="./javascript/index.js"></script>
 </body>
 <footer class="rodape">
