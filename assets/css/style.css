@@ -1,105 +1,85 @@
+/*geral*/
 * { 
-    margin: 0px
-    ;
-}
-
-/*Geral*/
-body {
-    width: 100%;
     margin: 0px;
     padding: 0px;
-    font-size: 14px;
-    color: #333;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato";
 }
 
-/*Header*/
+/*cabeçalho*/
+.cabeçalho {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(224, 224, 224, 1);
+}
+
 .logo {
     width: 30px;
-    height: 27.63px;
-    text-align: left;
-    padding-left: 22px;
-    padding-top: 6px;
-    padding-bottom: 9,37px;
-}
-header { 
-    background: #E0E0E0;
+    height: 27;
+    margin: 18px 22px;
 }
 
-/*Menu*/
-.embrulho-cabecalho {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 43px;
-    padding-top: 9px;
-    padding-bottom: 8px;
-    max-width: 1112px;
-    background: #E0E0E0;
-}
-span {
-    width: 100%;
+.titulo { 
     font-size: 20px;
-    line-height: 24px;
-    padding: 8px;
-    font-weight: bold;
-    text-align: center;
-    align-items: center;
-}
-.fechar, .menu-texto, .divisor {
-    display: none;
-} 
-.menu-hamburguer { 
-    display: block;
-    padding: 9px; 
-    padding-right: 20px;
-    
-}
-.menu .menu-celular:hover {
-    display: block;
-}
-.menu-celular:hover .fechar { 
-    display: block;
-    padding-top: 20px;
-    padding-left:  20px;
-    text-align: left;
-}
-.menu-texto div { 
-    padding-right: 20px;
-}
-.menu-celular:hover .menu-texto { 
-    display: block;
-    padding-top: 42px;
-    line-height: 35px;
-    color: #FFFFFF;
-}
-.menu .menu-celular .menu-texto div:hover {
-    background: #C4C4C4;
-    color: #333333;
-}
-.menu .menu-celular .menu-texto:hover { 
-    color: #FFFFFF;
-}
-.menu-celular:hover .menu-hamburguer {
-    display: none;
-}
-.menu-celular { 
-    font-size: 16px;
-    text-align: right;
-}
-.menu-celular:hover {
-    position: fixed;
-    top: 0;
-    right: 0;
-    flex-direction: column;
-    width: 85%;
-    height: 100%;
-    border: 0;
-    background: #333333;
-    color: white;
 }
 
-/*Form Square*/
+.menu-hamburguer {
+    margin: 18px;
+}
+
+button { 
+    border: none;
+    background: none;
+}
+
+.menu-texto, .fechar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*menu hamburguer*/
+.nav.ativo .divisor { 
+    display: none;
+}
+
+.nav.ativo .fechar {
+    display: block;
+    margin: 20px;
+}
+
+.nav.ativo .menu-texto {
+    text-align: end;
+    display: block;
+    position: fixed;
+    width: 85%;
+    top: 0px; 
+    right: 0px;
+    height: 100vh; 
+    transition: .6s; 
+    background:rgba(51, 51, 51, 1);
+    z-index: 1000; 
+}
+
+.nav.ativo .menu-texto a { 
+    color: rgba(255, 255, 255, 1);
+} 
+
+.nav.ativo .menu-texto :hover { 
+    color: rgba(51, 51, 51, 1);
+    background: rgba(196, 196, 196, 1);
+} 
+
+.nav.ativo .menu-texto li { 
+    padding-right: 20px;
+    height: 32px;
+    list-style: none;
+}
+
+/*formulario*/
 .forma-quadrada {
     width: 100%;
     display: flex;
@@ -151,57 +131,38 @@ span {
     color: #979797;
 }
 
-/*Tabela*/
-.contente {
-    display: flex;
+h3 { 
+    margin-top: 47px;
+    margin-bottom: 19px;
+    text-align: center;
 }
-.extrato-tabela {
-    width: 100%;
-    margin-right: 20px;
-    margin-left: 20px;
-    height: 30px;
-}
-.extrato-tabela, tr, td, th {
+
+.extrato-tabela{
+    width: 90%;
     border-collapse: collapse;
+    margin: 20px;
+    
 }
-th {
-    vertical-align: bottom; 
+
+.extrato-tabela thead th, 
+.extrato-tabela td{
+    padding: 0.75em 0.2em;
+    border-bottom: 1px solid #aaa;
 }
-.titulo-tabela {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    vertical-align: bottom;
+
+.extrato-tabela tfoot th{
+    font-style: normal;
+    border-top: 4px double #aaa;
 }
-.titulo-tabela, th { 
-    height: 50px;
+
+.extrato-tabela tfoot em{
+    font-style: normal;
 }
-#uma-linha {
-    height: 49px;
+
+tr, th, td {
+    border: 1px solid;
 }
-.destaque-valor { 
-    text-align: center; 
-}
-.destaque-mercadoria {
-    font-weight: bold;
-    text-align: left;
-}
-.destaque { 
-    font-weight: bold;
-    text-align: right;
-    height: 33px;
-}
-.borda-acima {
-    border-top: 1px solid #979797;  
-}
-.icone {
-    text-align: center;
-}
-.resultado {
-    text-align: right;
-    font-size: 10px;
-    padding-top: 0px;
-}/*
+
 
 /*Footer*/
 .rodape {
@@ -212,12 +173,18 @@ th {
     height: 8px;
 }
 
+
 /*Alteração para tamanho de 768px*/
 @media screen and (min-width: 768px) {
+    .nav.ativo .menu-texto {
+        width: 30%;
+
+    }
     .forma-quadrada h1 {
         display: block;
         text-align: center;
         font-size: 18px;
+        margin-bottom: 20px;
     }
     .forma-quadrada .embrulho-campo {
         flex-direction: row;
@@ -228,111 +195,100 @@ th {
         margin-top: 0px;
     }
     .pequeno {
-        width: calc(20% - 30px);
+        width: 21%;
     }
     .grande {
-        width: calc(60% - 60px);
+        width: 41%;
     }
     .forma-quadrada {
-        width: 100%;
+        width: 95%;
         border-radius: 4px;
         border: 1px solid #979797;
-        margin: 20px;  
+        margin: 20px;
         padding-top: 20px;
         padding-bottom: 20px
     }
     .linha {
         display: none;
     } 
-    .menu-celular:hover {
-        width: 33%;
+
+    .botao {
+        width: 200px;
     }
-    .extrato-tabelaa {
-        justify-content: center;
+
+    .extrato-tabela{
+        width: 95%;
+
+    }
+@media screen and (min-width: 1112px)
+{
+    .cabeçalho { 
         width: 100%;
-        padding-left: 20%;
-        margin-left: 20px;
-        margin-right: 20px
+        height: 80px;
+        display: flex;
+        background: rgba(224, 224, 224, 1);
+    }
+
+    h1 {
+        text-align: left;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 36;
+        margin: 18px 22px;
+    }
+    .menu-texto { 
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        height: 32px;
+        align-items: c;
+        margin-right: 20px;
+        color: rgba(51, 51, 51, 1);
+        background: rgba(255, 255, 255, 1);
+        padding: 8px 20px 0px 20px;
     }    
-    .destaque-valor { 
-        text-align: right;
+
+    .menu-hamburguer { 
+        display: none;
+    }
+
+    .forma-quadrada .embrulho-campo {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .forma-quadrada .campo-formulario {
+        margin: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .forma-quadrada {
+        width: 400px;
+        padding: 20px;
+        float: left;
+    }
+    .forma-quadrada button {
+        width: 100%;
+        margin: 0px;
+        margin-top: 20px;
+    }
+
+    .extrato-tabela{
+        width: 55%;
+
     }
 }
 
-/*Alteração para tamanho de 1112px*/
-@media screen and (min-width: 1112px) {
-        .embrulho-cabecalho { 
-            max-width: 1112px;
-            justify-content: center;
-        }
-        .forma-quadrada .embrulho-campo {
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: center;
-        }
-        .forma-quadrada .campo-formulario {
-            margin: 0;
-            margin-top: 20px;
-            width: 100%;
-        }
-        .forma-quadrada {
-            width: 400px;
-            padding: 20px;
-            float: left;
-        }
-        .forma-quadrada button {
-            width: 100%;
-            margin: 0px;
-            margin-top: 20px;
-        }
-        .extrato-tabela {
-            width: 652px;
-            padding: 20px;
-            float: right;
-        }
-        span {
-            text-align: left;
-            padding-left: 20px;
-        }
-        .menu .fechar, .menu .menu-hamburguer, .menu .menu-celular:hover { 
-            display: none;
-        }
-        .menu .menu-texto:hover { 
-            display: none;
-        }
-        .limpar { 
-            background-color: white;
-            border: white;
-            font-size: 16px;
-            font-family: 'Lato', sans-serif;
-            
-        }
-        .menu .menu-texto {
-            display: flex;
-            flex-direction: row;
-            width: fit-content;
-            height: fit-content;
-            justify-content: center;
-            background: #ffffff;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-            margin-right: 20px;
-            white-space: nowrap;
-            font-size: 16px bold;
-            color: #333333;
-            line-height: 20px;
-        }
-        .divisor { 
-            display: block;
-            color: #333333;
-            
-        }
+@media screen and (min-width: 1500px)
+{
+       
+    .area-trabalho-1500 {
+        margin-left: 200px;
+        margin-right: 200px; 
+        
     }
+    
 
-.area-trabalho-1500 { 
-    display: flex;
-    justify-content: center;
-    margin-left: 200px;
-    margin-right: 200px; 
-} 
+}
