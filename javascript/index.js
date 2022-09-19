@@ -12,20 +12,17 @@ menuHamburguer.addEventListener('click', toggleMenu);
 
 
 //colocar a lista em um array com objeto dentro
-const produtos = [
-    { 
-        tipo: 'soma',
-        nome: 'blusa',
-        valor: 'R$ 20,00'
-    },
+var produtosCru = localStorage.getItem('produtos')
+if (produtosCru != null) { 
+    var produtos = JSON.parse(produtosCru)
+} else {
+    var produtos = []
+}
 
-    {
-        tipo: 'divisão',
-        nome: 'calça',
-        valor: '30,00'
-    }
 
-]; 
+
+
+
 
 //loop 
 function reescrevaLista() { 
@@ -39,11 +36,36 @@ function reescrevaLista() {
             </td>
         </tr>`
     }
-
 }
+
+function enviarFormulario(e) { 
+    e.preventDefault()
+    
+    var produtosCru = localStorage.getItem('produtos')
+    if (produtosCru != null) { 
+        var produtos = JSON.parse(produtosCru)
+    } else {
+        var produtos = []
+    }
+
+    produtos.push({
+        tipo: e.target.elements['selecionar-transacao'].value,
+        nome: e.target.elements['nome-mercadoria'].value,
+        valor: e.target.elements['valor-mercadoria'].value
+
+    })
+
+    localStorage.setItem('produtos', JSON.stringify(produtos))
+    reescrevaLista()
+    document.getElementById('listagem').click()
+}
+
+
 
 //limpar extrato 
 function limparExtrato() {
     alert("Confirma a exclusão dos dados do extrato!")
     produtos.remove()
+    localStorage.setItem('produtos', JSON.stringify(produtos))
+    
 }
