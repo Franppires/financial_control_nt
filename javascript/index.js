@@ -40,7 +40,19 @@ function reescrevaLista() {
 
 function enviarFormulario(e) { 
     e.preventDefault()
-    
+    // não permiti letra 
+    for (i in e.target.elements['valor-mercadoria'].value) { 
+        if (["0","1","2","3","4","5","6","7","8","9"].indexOf(e.target.elements['valor-mercadoria'].value[i]) == -1) {
+            alert('Apenas números são permitidos no campo de valor!')
+            return false
+        } else { 
+            
+        }
+    }
+
+
+
+
     var produtosCru = localStorage.getItem('produtos')
     if (produtosCru != null) { 
         var produtos = JSON.parse(produtosCru)
