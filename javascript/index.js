@@ -26,7 +26,7 @@ if (produtosCru != null) {
 
 //loop 
 function reescrevaLista() { 
-    document.querySelector(".extrato-tabela tbody").innerHTML = ""
+    document.querySelector(".extrato-tabela").innerHTML = ""
 
     //selecionar +/-
     for(let i = 0; i < produtos.length; i ++) { 
@@ -35,7 +35,8 @@ function reescrevaLista() {
         if (produtos[i].tipo == "Compra") { 
             tipoTransacao = "+"
         }
-        document.querySelector('.extrato-tabela tbody').innerHTML +=`
+        //extrato na tabela
+        document.querySelector(".extrato-tabela").innerHTML +=`
         <tr class="borda-acima" id="uma-linha">
             <td class="text-right">${tipoTransacao}</td>
             <td>${produtos[i].nome}</div>
@@ -45,9 +46,55 @@ function reescrevaLista() {
         </tr>`
     }
 
-    
+    //informação antes de nova transação
+    if (produtos.length == 0) { 
+        document.querySelector('table.extrato-tabela tbody').innerHTML = `
+        <tr class="text-center">
+            <td colspan="3" class="text-center"> Por favor, adicione uma nova transação </td>
+        </tr>
+        `
+    }
+
+    //resultado de lucro e prejuizo
+    let lastIndex = 0 
+    let valorFinalString = ""
+    total = somaExtrato()
+
+    //sinal para [lucro] / [prejuizo]
+    lucroPrejuizo = "[LUCRO]"
+
+    if (total < 0) { 
+        lucroPrejuizo = "[PREJUIZO]"
+    }
+
+    if (total == 0) { 
+        lucroPrejuizo = ""
+    }
+    totalEscrito = total.toFixed(2)
+    totalEscrito = totalEscrito.replace("-", "")
+
+    //milhar 
+
     
 }
+
+//soma do extrato
+function somaExtrato() { 
+    var total = 0 
+
+    for (let i = 0; i < produtos.length; i++) { 
+        let valorSomar = parseFloat(produtos[i].valor.replace(/\./g, "").replace(/,/g, "."))
+        
+        if (produtos[i].tipo != "Compra") { 
+            valorSomar *= -1
+        }
+        total += valorSomar
+    }
+
+    return total
+}
+
+
 
 function enviarFormulario(e) { 
     e.preventDefault()
