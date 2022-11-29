@@ -42,7 +42,17 @@ function desenhaTabela() {
         `
     }
 
+    let total = 0
+
     for(transacao in produto) { 
+
+        if (produto[transacao].tipo == '+') { 
+            total += parseFloat((produto[transacao].valor))
+        } else { 
+            total -= parseFloat((produto[transacao].valor))
+        }
+
+        let dinheiro = produto[transacao].valor
 
        document.querySelector('tbody').innerHTML +=
        ` <tr class="conteudo-dinamico">
