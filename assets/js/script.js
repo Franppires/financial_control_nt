@@ -11,6 +11,12 @@ if (produtoCru != null) {
 function enviarTransacao(e) { 
     e.preventDefault()
 
+    //verifica se só tem numero e considera somente os numeros
+    numero = /[0-9]+/g
+    if (!numero.test(e.target.elements['valor-mercadoria'].value)) { 
+        alert('Apenas números são permitidos no campo de valor!')
+        return false
+    }
     produto.push({     // envia dados para localStorage
         tipo: e.target.elements['selecionar-transacao'].selectedIndex == 1 ? '-' : '+', 
         mercadoria: e.target.elements['nome-mercadoria'].value,
