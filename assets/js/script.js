@@ -11,6 +11,16 @@ if (produtoCru != null) {
 function enviarTransacao(e) { 
     e.preventDefault()
 
+    if (e.target.elements['selecionar-transacao'].selectedIndex == '') { 
+        alert('Tipo de operação não selecionada, por favor selecione uma operação')
+        return false
+    }
+
+    if (e.target.elements['nome-mercadoria'].value == '') { 
+        alert('Campo de mercadoria não preenchido, por favor digite o nome da mercadoria')
+        return false
+    }
+
     //verifica se só tem numero e considera somente os numeros
     numero = /[0-9]+/g
     if (!numero.test(e.target.elements['valor-mercadoria'].value)) { 
