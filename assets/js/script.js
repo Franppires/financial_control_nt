@@ -1,9 +1,6 @@
-var produto = []
-// console.log(produto)
+var produto = [] // inicia vazio 
 
-
-// armazenamento no localStorage
-var produtoCru = localStorage.getItem('produto')
+var produtoCru = localStorage.getItem('produto')  // armazenamento no localStorage
 if (produtoCru != null) { 
     var produto = JSON.parse(produtoCru)
 } else { 
@@ -14,49 +11,28 @@ if (produtoCru != null) {
 function enviarTransacao(e) { 
     e.preventDefault()
 
-    // envia dados para localStorage
-    produto.push({ 
+    produto.push({     // envia dados para localStorage
         tipo: e.target.elements['selecionar-transacao'].selectedIndex == 1 ? '-' : '+', 
         mercadoria: e.target.elements["nome-mercadoria"].value,
-        valor: e.target.elements["valor-mercadoria"].value,
+        valor: e.target.elements["valor-mercadoria"].value
+        .replace('.', '')
+        .replace(',', '.'),
     })
 
-    //salvando extrato no localstorage
-    localStorage.setItem("produto", JSON.stringify(produto))
-    desenhaTabela()
-}
-
-
-// exclusão de extrato 
-function excluirExtrato() { 
-    for (element of document.querySelectorAll(".conteudo-dinamico")) { 
-        //procura a class e se tiver remove
-        element.remove()
-        localStorage.clear()
-        produto = []
-        localStorage.setItem("produto", JSON.stringify(produto))
-        desenhaTabela()
-    }
-}
-
-// fazendo a exclusão
-function limparExtrato() {
-    if (produto != 0 && window.confirm("Realmente deseja excluir transações?")) { 
-        excluirExtrato()
-    } else if (produto <= 0) { 
-        alert("Não há transações para serem excluídas!")
-    }
+    localStorage.setItem("produto", JSON.stringify(produto)) //salvando extrato no localstorage
+    desenhaTabela() // chamando a tabela pra reescrever
 }
 
 
 function desenhaTabela() { 
 
     for(transacao in produto) { 
-       document.querySelector("table.extrato-tabela thead").innerHTML +=
+
+       document.querySelector("tbody").innerHTML +=
        ` <tr class="conteudo-dinamico">
             <td>${produto[transacao].tipo}</td>
             <td>${produto[transacao].mercadoria}</td>
-            <td>${produto[transacao].valor}</td>
+            <td style="text-align:end; ">${produto[transacao].valor}</td>
         </tr> `
     }
 }
