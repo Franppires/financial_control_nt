@@ -58,7 +58,7 @@ function desenhaTabela() {
        ` <tr class="conteudo-dinamico">
             <td>${produto[transacao].tipo}</td>
             <td>${produto[transacao].mercadoria}</td>
-            <td style="text-align:end; ">${produto[transacao].valor}</td>
+            <td style="text-align:end; ">${parseFloat(dinheiro).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
         </tr> `
     }
 }
