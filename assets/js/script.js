@@ -25,8 +25,9 @@ function enviarTransacao(e) {
 
 
 function desenhaTabela() { 
-    document.querySelector('body').innerHTML = ''
+    document.querySelector('body').innerHTML = '' // limpa extrato
 
+    // começo tabela
     document.querySelector('thead').innerHTML = `
     <tr>
         <th></th>
@@ -34,6 +35,7 @@ function desenhaTabela() {
         <th style="text-align:end;">Valor</th>
     </tr>`
 
+    // nenhuma transação
     if (produto.length == 0) { 
         document.querySelector('tbody').innerHTML = `
         <tr>
@@ -42,26 +44,39 @@ function desenhaTabela() {
         `
     }
 
-    let total = 0
+    let total = 0 // total do valor de mercadoria
 
     for(transacao in produto) { 
 
-        if (produto[transacao].tipo == '+') { 
+        if (produto[transacao].tipo == '+') { //seleciona tipo de operação
             total += parseFloat((produto[transacao].valor))
         } else { 
             total -= parseFloat((produto[transacao].valor))
         }
 
-        let dinheiro = produto[transacao].valor
+        let dinheiro = produto[transacao].valor // coloca campo dentro de variavel para conversão
 
-       document.querySelector('tbody').innerHTML +=
-       ` <tr class="conteudo-dinamico">
+        // extraato da tabela
+        document.querySelector('tbody').innerHTML += ` 
+        <tr class="conteudo-dinamico">
             <td>${produto[transacao].tipo}</td>
             <td>${produto[transacao].mercadoria}</td>
             <td style="text-align:end; ">${parseFloat(dinheiro).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
-        </tr> `
+        </tr> 
+        `
     }
-}
+
+    // resultado positivo ou negativo
+    let resultado = document.querySelector('tfoot').innerHTML 
+
+    if (total > 0) { 
+        resultado = '[LUCRO]'
+    } else if (total < 0) { 
+        resultado = '[PREJUIZO]'
+    }
+
+
+}   
 
 desenhaTabela()
         
