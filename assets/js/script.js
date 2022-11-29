@@ -24,6 +24,16 @@ function enviarTransacao(e) {
 }
 
 
+function limparExtrato() { 
+    let msg = 'Realmente deseja excluir transações? Esta ação vai excluir todas as transações'
+
+    if(confirm(msg) == true) { 
+        produto = []
+        localStorage.clear()
+        desenhaTabela()
+    }
+}
+
 function desenhaTabela() { 
     document.querySelector('body').innerHTML = '' // limpa extrato
 
