@@ -34,6 +34,14 @@ function desenhaTabela() {
         <th style="text-align:end;">Valor</th>
     </tr>`
 
+    if (produto.length == 0) { 
+        document.querySelector('tbody').innerHTML = `
+        <tr>
+        <h2 style="text-align:center">Nenhuma transação cadastrada!</h2>
+        </tr>
+        `
+    }
+
     for(transacao in produto) { 
 
        document.querySelector('tbody').innerHTML +=
