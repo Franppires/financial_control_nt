@@ -24,7 +24,7 @@ function enviarTransacao(e) {
 }
 
 function mascara(e) { 
-    let valor = document.getElementById('valor-mercadoria')
+    valor = document.getElementById('valor-mercadoria')
     valor.value = valor.value.replace(/[^0-9]+/g, '') // pegar somente números
 
     if (valor.value.length <= 2) {
@@ -60,7 +60,11 @@ function desenhaTabela() {
     // nenhuma transação
     if (produto.length == 0) { 
         document.querySelector('tbody').innerHTML = `
-        <h2 style="text-align:center">Nenhuma transação cadastrada!</h2>
+        <tr>
+            <td></td>
+            <td style="font-size:24px; text-align:center;"><strong>Nenhuma transação cadastrada!</strong></td>
+            <td></td>
+        </tr>
         `
     }
 
@@ -81,7 +85,7 @@ function desenhaTabela() {
         <tr class="conteudo-dinamico">
             <td>${produto[transacao].tipo}</td>
             <td>${produto[transacao].mercadoria}</td>
-            <td style="text-align:end; ">${parseFloat(dinheiro).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
+            <td style="text-align:end;"> ${parseFloat(dinheiro).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
         </tr> 
         `
     }
@@ -102,10 +106,11 @@ function desenhaTabela() {
         <tr style="border-top-style: double">
             <td style="border: none;"></td>
             <td style="border: none;"><strong>Total</strong></td>
-            <td style="border: none; text-align:end;"><strong>"> ${parseFloat(total).toLocaleString('pr-BR', {style:'currency', currency:'BRL'})}<strong></td>
-                <div style="font-size:10px; text-align:end;"> ${resultado}</div>
+            <td style="border: none; text-align:end;"><strong> ${parseFloat(total).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>
+                <div style="font-size:10px; text-align:end;" > ${resultado}</div>
+            </td>
         </tr>
-        `
+         `
     }
 }   
 
