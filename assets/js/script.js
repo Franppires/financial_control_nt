@@ -46,6 +46,7 @@ function limparExtrato() {
 
     if(confirm(msg) == true) { 
         produto = []
+        document.querySelector('tfoot').innerHTML = ''
         localStorage.clear()
         desenhaTabela()
     }
@@ -60,21 +61,25 @@ function desenhaTabela() {
     <tr>
         <th></th>
         <th style="text-align:start;">Mercadoria</th>
+        <th style="text-align:end;">Ações</th>
         <th style="text-align:end;">Valor</th>
+        
     </tr>`
 
     // nenhuma transação
     if (produto.length == 0) { 
         document.querySelector('tbody').innerHTML = `
         <tr>
-            <td></td>
-            <td style="font-size:24px; text-align:center;"><strong>Nenhuma transação cadastrada!</strong></td>
-            <td></td>
+            <td style="border: none;"></td>
+            <td style="border: none; font-size:24px; text-align:center;"><strong>Nenhuma transação cadastrada!</strong></td>
+            <td style="border: none;"></td>
         </tr>
         `
     }
 
     let total = 0 // total do valor de mercadoria
+
+    console.log(document.querySelectorAll('tbody .conteudo-dinamico'))
 
     for(transacao in produto) { 
 
@@ -91,7 +96,11 @@ function desenhaTabela() {
         <tr class="conteudo-dinamico">
             <td>${produto[transacao].tipo}</td>
             <td>${produto[transacao].mercadoria}</td>
+            <td style="text-align:end;">
+                <button onclick="excluirLinha(${transacao})"> <strong> Excluir </strong></button> 
+            </td>
             <td style="text-align:end;"> ${parseFloat(dinheiro).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
+            
         </tr> 
         `
     }
@@ -105,13 +114,14 @@ function desenhaTabela() {
         resultado = '[PREJUIZO]'
     }
 
-    if (resultado == '') { 
+    if (resultado == 0) { 
         document.querySelector('tfoot').innerHTML = ''
     } else { 
         document.querySelector('tfoot').innerHTML = `
         <tr style="border-top-style: double">
             <td style="border: none;"></td>
             <td style="border: none;"><strong>Total</strong></td>
+            <td style="border: none;"></td>
             <td style="border: none; text-align:end;"><strong> ${parseFloat(total).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>
                 <div style="font-size:10px; text-align:end;" > ${resultado}</div>
             </td>
@@ -119,6 +129,16 @@ function desenhaTabela() {
          `
     }
 }   
+
+function excluirLinha(e) { 
+    produto.splice(e, 1); 
+    desenhaTabela();
+    localStorage.setItem('produto', JSON.stringify(produto))
+
+    if (produto.length == 0) { 
+        document.querySelector('tfoot').innerHTML = ''
+    }
+}
 
 desenhaTabela()
         
