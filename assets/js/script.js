@@ -95,7 +95,7 @@ function desenhaTabela() {
         document.querySelector('tbody').innerHTML += ` 
         <tr class="conteudo-dinamico">
             <td>${produto[transacao].tipo}</td>
-            <td>${produto[transacao].mercadoria}</td>
+            <td style="width: 50%;">${produto[transacao].mercadoria}</td>
             <td style="text-align:end;">
                 <button onclick="excluirLinha(${transacao})"> <strong> Excluir </strong></button> 
             </td>
