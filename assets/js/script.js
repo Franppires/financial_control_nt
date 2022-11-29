@@ -46,7 +46,8 @@ function limparExtrato() {
 }
 
 function desenhaTabela() { 
-    document.querySelector('body').innerHTML = '' // limpa extrato
+    document.querySelector('tbody').innerHTML = '' // limpa extrato
+    resultado = ''
 
     // começo tabela
     document.querySelector('thead').innerHTML = `
@@ -59,9 +60,7 @@ function desenhaTabela() {
     // nenhuma transação
     if (produto.length == 0) { 
         document.querySelector('tbody').innerHTML = `
-        <tr>
         <h2 style="text-align:center">Nenhuma transação cadastrada!</h2>
-        </tr>
         `
     }
 
@@ -88,7 +87,7 @@ function desenhaTabela() {
     }
 
     // resultado positivo ou negativo
-    let resultado = document.querySelector('tfoot').innerHTML 
+    resultado = document.querySelector('tfoot').innerHTML 
 
     if (total > 0) { 
         resultado = '[LUCRO]'
