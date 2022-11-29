@@ -75,7 +75,18 @@ function desenhaTabela() {
         resultado = '[PREJUIZO]'
     }
 
-
+    if (resultado == '') { 
+        document.querySelector('tfoot').innerHTML = ''
+    } else { 
+        document.querySelector('tfoot').innerHTML = `
+        <tr style="border-top-style: double">
+            <td style="border: none;"></td>
+            <td style="border: none;"><strong>Total</strong></td>
+            <td style="border: none; text-align:end;"><strong>"> ${parseFloat(total).toLocaleString('pr-BR', {style:'currency', currency:'BRL'})}<strong></td>
+                <div style="font-size:10px; text-align:end;"> ${resultado}</div>
+        </tr>
+        `
+    }
 }   
 
 desenhaTabela()
