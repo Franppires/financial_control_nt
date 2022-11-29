@@ -116,3 +116,25 @@ function desenhaTabela() {
 
 desenhaTabela()
         
+
+// menu hamburguer
+let menu = document.querySelector('.nav')
+let menuItens = document.querySelector('.menu-texto')
+let abrirMenu = document.querySelector('.menu-hamburguer')
+let fechaMenu = document.querySelector('.fechar')
+let menuIcon = document.querySelector('.menu-icon')
+
+function toggleMenu() { 
+    if(menu.classList.contains('ativo')) { 
+        menu.classList.remove('ativo')
+        fechaMenu.style.display = 'none'
+        menuIcon.style.display = 'block'
+    } else { 
+        menu.classList.add('ativo')
+        fechaMenu.style.display = 'block'
+        menuIcon.style.display = 'none'
+    }
+}
+
+abrirMenu.addEventListener('click', toggleMenu)
+fechaMenu.addEventListener('click', toggleMenu)
