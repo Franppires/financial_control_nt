@@ -13,22 +13,30 @@ function enviarTransacao(e) {
 
     produto.push({     // envia dados para localStorage
         tipo: e.target.elements['selecionar-transacao'].selectedIndex == 1 ? '-' : '+', 
-        mercadoria: e.target.elements["nome-mercadoria"].value,
-        valor: e.target.elements["valor-mercadoria"].value
+        mercadoria: e.target.elements['nome-mercadoria'].value,
+        valor: e.target.elements['valor-mercadoria'].value
         .replace('.', '')
         .replace(',', '.'),
     })
 
-    localStorage.setItem("produto", JSON.stringify(produto)) //salvando extrato no localstorage
+    localStorage.setItem('produto', JSON.stringify(produto)) //salvando extrato no localstorage
     desenhaTabela() // chamando a tabela pra reescrever
 }
 
 
 function desenhaTabela() { 
+    document.querySelector('body').innerHTML = ''
+
+    document.querySelector('thead').innerHTML = `
+    <tr>
+        <th></th>
+        <th style="text-align:start;">Mercadoria</th>
+        <th style="text-align:end;">Valor</th>
+    </tr>`
 
     for(transacao in produto) { 
 
-       document.querySelector("tbody").innerHTML +=
+       document.querySelector('tbody').innerHTML +=
        ` <tr class="conteudo-dinamico">
             <td>${produto[transacao].tipo}</td>
             <td>${produto[transacao].mercadoria}</td>
