@@ -23,6 +23,17 @@ function enviarTransacao(e) {
     desenhaTabela() // chamando a tabela pra reescrever
 }
 
+function mascara(e) { 
+    let valor = document.getElementById('valor-mercadoria')
+    valor.value = valor.value.replace(/[^0-9]+/g, '') // pegar somente números
+
+    if (valor.value.length <= 2) {
+        valor.value = ('000' + valor.value).substring(-3) // centavos
+    }
+    
+    valor.value = valor.value.replace(/([0-9]{2})$/g, '.$1') // milhar
+    valor.value = parseFloat(valor.value).toLocaleString('pt-BR') // transforma em string
+}
 
 function limparExtrato() { 
     let msg = 'Realmente deseja excluir transações? Esta ação vai excluir todas as transações'
