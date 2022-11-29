@@ -10,8 +10,16 @@
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background: rgba(224, 224, 224, 1);
+}
+
+.cabeçalho-conteudo { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1112px;
 }
 
 .logo {
@@ -22,6 +30,7 @@
 
 .titulo { 
     font-size: 20px;
+    text-align: center;
 }
 
 .menu-hamburguer {
@@ -81,6 +90,8 @@ a {
 }
 
 /*formulario*/
+
+
 .forma-quadrada {
     width: 100%;
     display: flex;
@@ -227,6 +238,10 @@ h3 {
         background: rgba(224, 224, 224, 1);
     }
 
+    .titulo { 
+        text-align: start;
+    }
+
     h1 {
         text-align: left;
     }
@@ -281,12 +296,9 @@ h3 {
 
 @media screen and (min-width: 1500px)
 {
-       
-    .area-trabalho-1500 {
+    .formulario-tabela-conteudo {
         margin-left: 200px;
-        margin-right: 200px; 
-        
+        margin-right: 200px;
     }
-    
-
+       
 }
