@@ -11,11 +11,13 @@ if (produtoCru != null) {
 function enviarTransacao(e) { 
     e.preventDefault()
 
+    // verifica se é diferente de vazio
     if (e.target.elements['selecionar-transacao'].selectedIndex == '') { 
         alert('Tipo de operação não selecionada, por favor selecione uma operação')
         return false
     }
 
+    // verifica se é diferente de vazio
     if (e.target.elements['nome-mercadoria'].value == '') { 
         alert('Campo de mercadoria não preenchido, por favor digite o nome da mercadoria')
         return false
