@@ -22,6 +22,17 @@
     max-width: 1112px;
 }
 
+.formulario-tabela { 
+    display: flex;
+    justify-content: center;
+}
+.formulario-tabela-conteudo { 
+    width: 100%;
+    max-width: 1112px;
+    justify-content: center;
+}
+
+
 .logo {
     width: 30px;
     height: 27;
@@ -173,6 +184,7 @@ h3 {
 
 
 
+
 /*Footer*/
 .rodape {
     position: fixed;
@@ -238,8 +250,9 @@ h3 {
         background: rgba(224, 224, 224, 1);
     }
 
-    .titulo { 
-        text-align: start;
+    h2 { 
+        display: flex;
+        justify-content: left;
     }
 
     h1 {
@@ -294,20 +307,3 @@ h3 {
     }
 }
 
-@media screen and (min-width: 1300px) { 
-    .formulario-tabela-conteudo {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-}
-
-
-
-@media screen and (min-width: 1500px)
-{
-    .formulario-tabela-conteudo {
-        margin-left: 200px;
-        margin-right: 200px;
-    }
-       
-}

@@ -19,9 +19,8 @@
                 <button class="menu-hamburguer">
                     <img class="menu-icon" src="./assets/img/menu.png" alt="menu" width="24px">
                 </button>
-                
                 <ul class="menu-texto">
-                    <button class="fechar">
+                    <button class="fechar menu-hamburguer">
                         <img src="./assets/img/x.png" alt="fechar">
                     </button>
                     <li><a id="listagem" href="javascript:void(0)">Cadastro de transações</a> </li>
@@ -52,7 +51,7 @@
                     </div>
                     <div class="campo-formulario pequeno">
                         <label for="">Valor</label>
-                        <input id="valor-mercadoria" type="texto" placeholder="R$0,00"  onkeyup="mascara(event)" onfocus="this.value = ''" />
+                        <input id="valor-mercadoria" type="texto" placeholder="R$0,00" onkeyup="mascara(event)" onfocus="this.value = ''" />
                     </div>
                     <button class="botao" type="submit">Adicionar transação</button> <!-- submit = pede a para preencher as informações dos inputs  -->
                 </div>
@@ -61,17 +60,25 @@
             <section class="contente">
                 <h3>Extrato de transações</h3>
                 <table class="extrato-tabela">
-                    <thead></thead>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th style="text-align:start;">Mercadoria</th>
+                            <th style="text-align:end;">Ações</th>
+                            <th style="text-align:end;">Valor</th>
+
+                        </tr>
+                    </thead>
                     <tbody></tbody>
                     <tfoot></tfoot>
                 </table>    
             </section>
         </div>                                 
     </main>
-    
+    <footer class="rodape">
+        <img src="./assets/img/footer.png" alt="rodapé">
+    </footer>
     <script src="./assets/js/script.js"></script>
 </body>
-<footer class="rodape">
-    <img src="./assets/img/footer.png" alt="rodapé">
-</footer>
+
 </html>
