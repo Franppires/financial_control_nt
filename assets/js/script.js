@@ -30,7 +30,10 @@ function enviarTransacao(e) {
     produto.push({     // envia dados para localStorage
         tipo: e.target.elements['selecionar-transacao'].selectedIndex == 1 ? '-' : '+', 
         mercadoria: e.target.elements['nome-mercadoria'].value,
-        valor: e.target.elements['valor-mercadoria'].value        
+        valor: parseFloat(e.target.elements['valor-mercadoria'].value 
+        .replaceAll('R$', '')
+        .replaceAll('.', '')
+        .replaceAll(',', '.'))
     })
 
     localStorage.setItem('produto', JSON.stringify(produto)) //salvando extrato no localstorage
@@ -54,7 +57,6 @@ function limparExtrato() {
 
     if(confirm(msg) == true) { 
         produto = []
-        resultadoTotal = ''
         localStorage.clear()
         desenhaTabela()
     }
@@ -76,13 +78,15 @@ function desenhaTabela() {
 
     let total = 0 // total do valor de mercadoria
 
-    console.log(total)
     for(transacao in produto) { 
         let dinheiro = produto[transacao].valor // coloca campo dentro de variavel para conversão
         let tipo = produto[transacao].tipo //tipo de operação positiva ou negativa 
 
-        console.log(total = dinheiro * (tipo == '+' ? 1 : -1)) //calculo soma e subtração
-
+        if (tipo == '+') { //seleciona tipo de operação
+            total += parseFloat(dinheiro)
+        } else { 
+            total -= parseFloat(dinheiro)
+        }
         // extrato da tabela
         extrato.innerHTML += ` 
         <tr class="conteudo-dinamico">
@@ -90,26 +94,27 @@ function desenhaTabela() {
             <td style="width: 50%;">${produto[transacao].mercadoria}</td>
             <td style="text-align:end;">
                 <button onclick="excluirLinha"${transacao}> <strong> Excluir </strong></button> </td>
-            <td style="text-align:end;"> ${dinheiro}</td>
+            <td style="text-align:end;"> ${dinheiro.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
         </tr> `
     }
 
-    let resultado = document.querySelector('tfoot div')  //resultado lucro ou prejuizo
-    total > 0 ? resultado = '[LUCRO]' : resultado = '[PREJUIZO]'
+    lucroPrejuizo = document.querySelector('tfoot div')
+    
+    if (total > 0) { 
+        lucroPrejuizo = '[LUCRO]'
+    } else { 
+        lucroPrejuizo = '[PREJUIZO]'
+    }
 
-    let resultadoTotal = document.querySelector('tfoot') //escrever total
-    resultadoTotal.innerHTML = '' 
+    document.querySelector('tfoot').innerHTML =  `
 
-    if (total !== 0) {  
-        resultadoTotal.innerHTML = `
-        <tr style="border-top-style: double">
-            <td style="border: none;"></td>
-            <td style="border: none;"><strong>Total</strong></td>
-            <td style="border: none;"></td>
-            <td style="border: none; text-align:end;"><strong> ${total}</strong>
-                <div style="font-size:10px; text-align:end;"> ${resultado}</div>  </td>
-        </tr> `
-     } 
+    <tr style="border-top-style: double">
+        <td style="border: none;"></td>
+        <td style="border: none;"><strong>Total</strong></td>
+        <td style="border: none;"></td>
+        <td style="border: none; text-align:end;"><strong> ${total.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>
+            <div style="font-size:10px; text-align:end;"> ${total != 0 ? lucroPrejuizo : ''}</div>  </td>
+    </tr> `
 
 }   
 
@@ -126,6 +131,7 @@ desenhaTabela()
 let menu = document.querySelector('.nav')
 let menuItens = document.querySelector('.menu-texto')
 let abrirMenu = document.querySelector('.menu-hamburguer')
+let fechaMenu = document.querySelector('.fechar')
 let menuIcon = document.querySelector('.menu-icon')
 
 function toggleMenu() { 
@@ -142,3 +148,4 @@ function toggleMenu() {
 }
 
 abrirMenu.addEventListener('click', toggleMenu)
+fechaMenu.addEventListener('click', toggleMenu)
