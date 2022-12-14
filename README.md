@@ -14,3 +14,8 @@ Projeto individual usando HTML, CSS e javascript para:
 * Ao adicionar uma nova transação, persistir no Local Storage e já atualizar a lista com o extrato. Atualizar também o cálculo apresentado.
 * Ao clicar no link “Limpar dados”, apresentar uma mensagem de confirmação e em seguida apagar as informações, atualizando a lista
 * Botão de exluir somente um extrato ao inves de deletar tudo.
+
+
+### clique na imagem abaixo e assista ao video da aplicação em funcionamento
+[![controle financeiro](https://user-images.githubusercontent.com/104803568/207600865-0b330aec-463d-4adb-bfa5-a4a74ac55a38.png)
+)]https://youtu.be/F_e37WPQZ78)
