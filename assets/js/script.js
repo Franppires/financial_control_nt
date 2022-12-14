@@ -30,10 +30,7 @@ function enviarTransacao(e) {
     produto.push({     // envia dados para localStorage
         tipo: e.target.elements['selecionar-transacao'].selectedIndex == 1 ? '-' : '+', 
         mercadoria: e.target.elements['nome-mercadoria'].value,
-        valor: parseFloat(e.target.elements['valor-mercadoria'].value 
-        .replaceAll('R$', '')
-        .replaceAll('.', '')
-        .replaceAll(',', '.'))
+        valor: parseFloat(e.target.elements['valor-mercadoria'].value.replaceAll('R$', '').replaceAll('.', '').replaceAll(',', '.'))
     })
 
     localStorage.setItem('produto', JSON.stringify(produto)) //salvando extrato no localstorage
@@ -93,7 +90,7 @@ function desenhaTabela() {
             <td>${tipo}</td>
             <td style="width: 50%;">${produto[transacao].mercadoria}</td>
             <td style="text-align:end;">
-                <button onclick="excluirLinha"${transacao}> <strong> Excluir </strong></button> </td>
+                <button onclick="excluirLinha(${transacao})"> <strong> Excluir </strong></button> </td>
             <td style="text-align:end;"> ${dinheiro.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
         </tr> `
     }
@@ -107,7 +104,6 @@ function desenhaTabela() {
     }
 
     document.querySelector('tfoot').innerHTML =  `
-
     <tr style="border-top-style: double">
         <td style="border: none;"></td>
         <td style="border: none;"><strong>Total</strong></td>
@@ -115,7 +111,6 @@ function desenhaTabela() {
         <td style="border: none; text-align:end;"><strong> ${total.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>
             <div style="font-size:10px; text-align:end;"> ${total != 0 ? lucroPrejuizo : ''}</div>  </td>
     </tr> `
-
 }   
 
 function excluirLinha(e) { //excluir linha
@@ -126,7 +121,6 @@ function excluirLinha(e) { //excluir linha
 
 desenhaTabela()
         
-
 // menu hamburguer
 let menu = document.querySelector('.nav')
 let menuItens = document.querySelector('.menu-texto')
