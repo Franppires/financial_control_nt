@@ -2,17 +2,11 @@
 
 Projeto individual realizado na newtab usando HTML, CSS e javascript:
 
-Opções do campo “Tipo de transação”
-* Compra 
-* Venda
+Opções de “Tipo de transação” Compra e Venda
 
-Caso não exista nenhuma transação cadastrada
-* Mensagem de “Nenhuma transação cadastrada” na lista do Extrato.
+Caso não exista nenhuma transação cadastrada mensagem de “Nenhuma transação cadastrada” na lista do Extrato.
 
-Responsividade 
-* Smartphones
-* Tablets (modos portrait e landscape) 
-* Monitores a partir de 1024px até 1900px. 
+Responsividade em Smartphones, Tablets (modos portrait e landscape), e Monitores a partir de 1024px até 1900px. 
 
 O que a aplicação deve fazer: 
 * Validar o formulário para que todos os campos sejam preenchidos.
