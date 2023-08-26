@@ -1,18 +1,14 @@
- # Projeto Controle Financeiro
+ # Sistema de Cadastro Financeiro com Interface Clara
 
-Projeto individual realizado na newtab usando HTML, CSS e javascript:
+📚 Desenvolvi um projeto acadêmico abrangente: um sistema de cadastro financeiro de design claro e intuitivo.
 
-Opções de “Tipo de transação” Compra e Venda
+💼 Criei uma tela com formulário de fácil uso para inserção de produtos, tipos de transações e valores, com máscaras para melhor visualização.
 
-Caso não exista nenhuma transação cadastrada mensagem de “Nenhuma transação cadastrada” na lista do Extrato.
+🔍 Implementei o armazenamento no Local Storage, permitindo que os registros fossem persistentes mesmo após fechar o navegador.
 
-Responsividade em Smartphones, Tablets (modos portrait e landscape), e Monitores a partir de 1024px até 1900px. 
+🗑️ Adicionei recursos de exclusão tanto para registros individuais quanto para a visualização total, aprimorando a funcionalidade do sistema.
 
-O que a aplicação deve fazer: 
-* Validar o formulário para que todos os campos sejam preenchidos.
-* Adicionar uma máscara no campo “Valor” para que apenas números sejam preenchidos e com a formatação correta. (Padrão: 10,90)
-* Ao adicionar uma nova transação, persistir no Local Storage e já atualizar a lista com o extrato. Atualizar também o cálculo apresentado.
-* Ao clicar no link “Limpar dados”, apresentar uma mensagem de confirmação e em seguida apagar as informações, atualizando a lista
+🌐 Esse projeto demonstrou minha habilidade em traduzir conceitos financeiros em uma interface amigável e eficiente, com atenção aos detalhes.
 
 
 ### Clique na imagem abaixo e assista ao video da aplicação em funcionamento
